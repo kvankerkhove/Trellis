@@ -15,7 +15,7 @@ class UsersController < ApplicationController
             session[:current_user] = user.id
             render json: user, status: 201
         else
-            render json: { error: "Invalid user" }, status: 422
+            render json: { error: ["Invalid user"] }, status: 422
         end
     end
 

@@ -1,5 +1,6 @@
-import './App.css';
-import { Route, Switch } from 'react-router-dom';
+import './App.css'
+import { useState, useEffect } from 'react'
+import { Route, Switch } from 'react-router-dom'
 import NavBar from './NavBar'
 import Home from './Home'
 import SignUp from './SignUp'
@@ -7,20 +8,68 @@ import LogIn from './LogIn'
 import Crops from './Crops'
 import CreateGarden from './CreateGarden'
 import MyGardens from './MyGardens'
+import Logout from './Logout'
 
 function App() {
+  const [isLoggedIn, setIsLoggedIn] = useState(false)
+  const [user, setUser] = useState(null)
+  const [errors, setErrors] = useState([])
+
+  // useEffect(() => {
+  //   fetch("/current_user").then((r) => {
+  //     if (r.ok) {
+  //       r.json().then((user) => setUser(user));
+  //     } else {
+  //       r.json().then((err) => console.log(err.error))
+  //     }
+  //   });
+  // }, []);
+
+  useEffect(() => {
+    // console.log("its working")
+    const validateUser = async () => {
+      let req = await fetch("/current_user");
+      if (req.ok) {
+        setUser(await req.json())
+        setIsLoggedIn(true)
+        // let user = await req.json()
+      } else {
+        // handleLogin(false);
+        // history.push(“/login”);
+        let err = await req.json()
+        setErrors([...errors, err.error])
+        setIsLoggedIn(false)
+      }
+    };
+    validateUser()
+  }, [])
+
+  const handleUserLogin = (loginUser) => {
+    setUser(loginUser)
+    setIsLoggedIn(true)
+  }
+
+  const handleLogout = (response) => {
+    console.log(response)
+    setIsLoggedIn(false)
+  }
+
+  console.log(isLoggedIn)
+
+  console.log(user)
+
   return (
     <div className="App">
       <NavBar/>
       <Switch>
         <Route exact path='/'>
-          <Home />
+          <Home isLoggedIn={isLoggedIn} user={user}/>
         </Route>
         <Route exact path='/signup'>
-          <SignUp />
+          <SignUp handleUserLogin={handleUserLogin}/>
         </Route>
         <Route exact path='/login'>
-          <LogIn />
+          <LogIn handleUserLogin={handleUserLogin}/>
         </Route>
         <Route exact path='/crops'>
           <Crops />
@@ -30,6 +79,9 @@ function App() {
         </Route>
         <Route exact path='/my_gardens'>
           <MyGardens/>
+        </Route>
+        <Route exact path='/logout'>
+          <Logout handleLogout={handleLogout}/>
         </Route>
       </Switch>
     </div>

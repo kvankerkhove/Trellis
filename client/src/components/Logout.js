@@ -1,8 +1,18 @@
 import React from 'react'
 
-function Logout() {
+function Logout({handleLogout}) {
+  function handleLogoutClick() {
+    fetch("/logout", { method: "DELETE" }).then((r) => {
+      if (r.ok) {
+        // setIsLoggedIn(false)
+        // setUser(null);
+        // history.push('/login')
+        handleLogout(r)
+      }
+    });
+  }
   return (
-    <div>Logout</div>
+    <button onClick={handleLogoutClick}>Logout</button>
   )
 }
 
