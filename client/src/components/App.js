@@ -60,7 +60,7 @@ function App() {
 
   return (
     <div className="App">
-      <NavBar/>
+      <NavBar isLoggedIn={isLoggedIn} handleLogout={handleLogout}/>
       <Switch>
         <Route exact path='/'>
           <Home isLoggedIn={isLoggedIn} user={user}/>
