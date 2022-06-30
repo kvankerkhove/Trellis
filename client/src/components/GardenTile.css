@@ -1,0 +1,6 @@
+.garden-tile{
+    width: 75px;
+    height: 75px;
+    border: 1px dashed rgb(167, 164, 164);
+    color: black
+}

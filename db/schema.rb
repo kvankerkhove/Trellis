@@ -19,8 +19,11 @@ ActiveRecord::Schema[7.0].define(version: 2022_06_28_173605) do
     t.string "family"
     t.integer "plants_per_sq_ft"
     t.integer "days_to_maturity"
+    t.float "projected_yield"
+    t.string "yield_unit"
     t.string "watering_needs"
     t.string "details"
+    t.string "image"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

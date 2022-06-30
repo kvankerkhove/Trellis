@@ -1,0 +1,17 @@
+#garden-grid-container{
+    display: flex;
+    justify-content: center;
+}
+
+#garden-grid{
+    /* width: 750px;
+    height: 750px; */
+    /* display: grid; */
+    justify-items: center;
+    align-items: center;
+    justify-content: center;
+    /* grid-template-columns: repeat(10, 1fr);
+    grid-template-rows: repeat(10, 1fr); */
+    column-gap: 0px;
+    row-gap: 0px;
+}

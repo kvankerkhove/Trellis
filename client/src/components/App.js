@@ -14,6 +14,7 @@ function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false)
   const [user, setUser] = useState(null)
   const [errors, setErrors] = useState([])
+  const [crops, setCrops] = useState(null)
 
   // useEffect(() => {
   //   fetch("/current_user").then((r) => {
@@ -44,6 +45,13 @@ function App() {
     validateUser()
   }, [])
 
+  useEffect(() => {
+    fetch('/crops')
+    .then(r => r.json())
+    .then(crops => setCrops(crops))
+  }, [])
+
+
   const handleUserLogin = (loginUser) => {
     setUser(loginUser)
     setIsLoggedIn(true)
@@ -54,9 +62,7 @@ function App() {
     setIsLoggedIn(false)
   }
 
-  console.log(isLoggedIn)
-
-  console.log(user)
+  
 
   return (
     <div className="App">
@@ -75,7 +81,7 @@ function App() {
           <Crops />
         </Route>
         <Route exact path='/create_garden'>
-          <CreateGarden/>
+          <CreateGarden crops={crops}/>
         </Route>
         <Route exact path='/my_gardens'>
           <MyGardens/>

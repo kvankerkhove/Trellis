@@ -1,8 +1,14 @@
 import React from 'react'
+import './GardenTile.css'
 
-function GardenTile() {
+function GardenTile({id}) {
+  const handleClick = (e) => {
+    console.log(e.target.id)
+  }
   return (
-    <div>GardenTile</div>
+    <div onClick={handleClick} class='garden-tile' id={id}>
+      
+    </div>
   )
 }
 
