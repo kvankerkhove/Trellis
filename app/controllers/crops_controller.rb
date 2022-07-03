@@ -1,6 +1,6 @@
 class CropsController < ApplicationController
     def index
-        render json: Crop.all
+        render json: Crop.alphabetized
     end
 
     def show

@@ -22,6 +22,16 @@ class GardenSquaresController < ApplicationController
         render json: {}
     end
 
+    def all_squares
+        garden_squares = GardenSquare.sort_by_garden(params[:id])
+        render json: garden_squares
+    end
+
+    def create_squares
+        garden_square = GardenSquare.create!(garden_square_params)
+        render json: garden_square, status: :created
+    end
+
     private
 
     def find_garden_square

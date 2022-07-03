@@ -7,6 +7,11 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "articles#index"
+  get "/all_squares/:id", to: "garden_squares#all_squares"
+  post "/all_squares/:id", to: "garden_squares#create_squares"
+  post "/create_garden", to: "gardens#create"
+  get "/current_garden", to: "gardens#show"
+  post "/remove", to: "sessions#remove"
   post "/signup", to: "users#create"
   get "/current_user", to: "users#show"
   post "/login", to: "sessions#create"

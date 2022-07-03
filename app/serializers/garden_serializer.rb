@@ -1,3 +1,4 @@
 class GardenSerializer < ActiveModel::Serializer
-  attributes :id, :rows, :columns, :user_id
+  attributes :id, :name, :rows, :columns, :user_id
+  has_many :garden_squares
 end

@@ -15,6 +15,7 @@ function App() {
   const [user, setUser] = useState(null)
   const [errors, setErrors] = useState([])
   const [crops, setCrops] = useState(null)
+  const [currentGarden, setCurrentGarden] = useState(null)
 
   // useEffect(() => {
   //   fetch("/current_user").then((r) => {
@@ -46,6 +47,18 @@ function App() {
   }, [])
 
   useEffect(() => {
+    // console.log("its working")
+    const validateGarden = async () => {
+      let req = await fetch("/current_garden");
+      if (req.ok) {
+        setCurrentGarden(await req.json())
+        // let user = await req.json()
+      } 
+    };
+    validateGarden()
+  }, [])
+
+  useEffect(() => {
     fetch('/crops')
     .then(r => r.json())
     .then(crops => setCrops(crops))
@@ -60,6 +73,7 @@ function App() {
   const handleLogout = (response) => {
     console.log(response)
     setIsLoggedIn(false)
+    setCurrentGarden(null)
   }
 
   
@@ -81,7 +95,7 @@ function App() {
           <Crops />
         </Route>
         <Route exact path='/create_garden'>
-          <CreateGarden crops={crops}/>
+          <CreateGarden crops={crops} user={user} currentGarden={currentGarden} setCurrentGarden={setCurrentGarden}/>
         </Route>
         <Route exact path='/my_gardens'>
           <MyGardens/>

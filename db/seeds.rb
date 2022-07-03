@@ -6,6 +6,19 @@
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
 puts 'Seeding data...'
+
+fallow = Crop.create({
+    name: "Fallow",
+    family: "N/A",
+    plants_per_sq_ft: 0,
+    days_to_maturity: 0,
+    projected_yield: 0,
+    yield_unit: 'n/a',
+    watering_needs: 'n/a',
+    details: 'n/a',
+    image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/8/89/HD_transparent_picture.png/1200px-HD_transparent_picture.png'
+})
+
 carrot = Crop.create({
     name: "Carrot",
     family: "Umbel",
@@ -86,9 +99,29 @@ danny = User.create({
 })
 
 katey_garden = Garden.create({
+    name: 'example',
     rows: 10,
     columns: 10,
     user_id: katey.id
+})
+
+danny_garden = Garden.create({
+    name: 'dannys garden',
+    rows: 7,
+    columns: 10,
+    user_id: danny.id
+})
+
+GardenSquare.create({
+    square_number: 1,
+    garden_id: danny_garden.id,
+    crop_id: cucumber.id
+})
+
+GardenSquare.create({
+    square_number: 2,
+    garden_id: danny_garden.id,
+    crop_id: salad_radish.id
 })
 
 GardenSquare.create({

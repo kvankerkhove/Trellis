@@ -12,6 +12,11 @@ class SessionsController < ApplicationController
 
     def destroy
         session.delete :current_user
+        session.delete :current_garden
         head :no_content
+    end
+
+    def remove
+        session.delete :current_garden
     end
 end

@@ -37,6 +37,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_06_28_173605) do
   end
 
   create_table "gardens", force: :cascade do |t|
+    t.string "name"
     t.integer "rows"
     t.integer "columns"
     t.integer "user_id"

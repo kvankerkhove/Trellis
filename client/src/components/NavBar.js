@@ -36,6 +36,20 @@ function NavBar({isLoggedIn, handleLogout}) {
   }
 
 
+    let gardenLinks = isLoggedIn ?
+    <>
+      <Link class='link' exact to='/create_garden'>
+        Create Garden
+      </Link>
+      <Link class='link' exact to='/my_gardens'>
+        My Gardens
+      </Link>
+    </>
+    :
+    null
+  
+
+
   return (
     <div class='container circleBehind'>
       <div class='padding'>
@@ -46,12 +60,7 @@ function NavBar({isLoggedIn, handleLogout}) {
           <Link class='link' exact to='/crops'>
             Crops
           </Link>
-          <Link class='link' exact to='/create_garden'>
-            Create Garden
-          </Link>
-          <Link class='link' exact to='/my_gardens'>
-            My Gardens
-          </Link>
+          {gardenLinks}
         </div>
         <div className='nav-second-half'>
           {links}

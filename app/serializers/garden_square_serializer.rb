@@ -1,5 +1,4 @@
 class GardenSquareSerializer < ActiveModel::Serializer
-  attributes :id, :square_number
-  belongs_to :garden
+  attributes :id, :square_number, :garden_id, :crop_id
   belongs_to :crop
 end

@@ -5,8 +5,6 @@ function SelectCropDropdown({crops, handleSelectedCrop, selectedCrop}) {
     const [cropIsChosen, setCropIsChosen] = useState(false)
     if (!crops) return null
 
-    console.log(selectedCrop)
-
     const renderCrops = crops.map(crop => {
         return <option key={crop.id} id={crop.id}>{crop.name}</option>
     })
