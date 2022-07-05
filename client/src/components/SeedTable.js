@@ -1,4 +1,5 @@
 import React from 'react'
+import './SeedTable.css'
 
 function SeedTable({currentGardenSquares}) {
     console.log(currentGardenSquares)
@@ -38,14 +39,18 @@ function SeedTable({currentGardenSquares}) {
     // console.log(renderNeededSeeds)
   return (
     <div>
-        <table>
-        <tr>
-          <th>Crop</th>
-          <th>Plants/sq.ft</th>
-          <th>Total Seeds Needed</th>
-        </tr>
-        {renderNeededSeeds}
-      </table>
+         <table id="seed-table">
+            <thead>
+                <tr>
+                    <th className="column">Crop</th>
+                    <th className="column"> Plants/sq.ft</th>
+                    <th className="column">Total Seeds Needed</th>
+                </tr>
+            </thead>
+            <tbody>
+                {renderNeededSeeds}
+            </tbody>
+        </table>
     </div>
   )
 }

@@ -1,6 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import './NavBar.css'
+import logo from '../images/logo.png'
 
 function NavBar({isLoggedIn, handleLogout}) {
   function handleLogoutClick() {
@@ -47,6 +48,7 @@ function NavBar({isLoggedIn, handleLogout}) {
     </>
     :
     null
+
   
 
 
@@ -55,7 +57,7 @@ function NavBar({isLoggedIn, handleLogout}) {
       <div class='padding'>
         <div className='nav-first-half'>
           <Link class='link' exact to='/'>
-            Home
+            <img src={logo} alt="logo" height="80px"/>
           </Link>
           <Link class='link' exact to='/crops'>
             Crops
