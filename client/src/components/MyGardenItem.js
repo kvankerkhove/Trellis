@@ -1,13 +1,14 @@
 import React from 'react'
 import { useHistory } from 'react-router-dom'
 import GardenGrid from './GardenGrid'
+import './MyGardenItem.css'
 
 function MyGardenItem({garden, setCurrentGarden}) {
   const {id, name, rows, columns, garden_squares} = garden
 
   const history = useHistory()
-  let height = '50px'
-  let width = '50px'
+  let height = '25px'
+  let width = '25px'
 
   const handleEditClick = (e) => {
     console.log(garden)
@@ -27,10 +28,12 @@ function MyGardenItem({garden, setCurrentGarden}) {
     
   }
   return (
-    <div>
-      <h1>{name}</h1>
-      <GardenGrid currentGarden={garden} height={height} width={width}/>
-      <button onClick={handleEditClick}>view and edit</button>
+    <div className="tile">
+      <div className="tile-card">
+        <h1>{name}</h1>
+        <GardenGrid className="grid" currentGarden={garden} height={height} width={width}/>
+        <button className="button" onClick={handleEditClick}>Edit</button>
+      </div>
     </div>
   )
 }

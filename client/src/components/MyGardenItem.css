@@ -1,0 +1,49 @@
+/* #garden-item{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: bisque;
+    width: 50%;
+} */
+
+.tile{
+    position: relative;
+    display: inline-block;
+    margin-right: 10px;
+    font-size: 10px;
+    cursor: pointer;
+    transition: 450ms all;
+    transform-origin: center left;
+}
+
+.tile-card{
+    display: flex;
+    flex-direction: column;
+    height: 350px;
+    width: 300px;
+    background-color: rgb(199, 233, 199);
+    text-align: center;
+    justify-content: space-between;
+    border-radius: 10px;
+}
+.grid{
+    background-color: brown;
+}
+.button{
+    width: 25%;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+
+}
+
+
+.tile__title {
+position: absolute;
+bottom: 0;
+padding: 10px;
+}
+.tile:hover~.tile {
+transform: translate3d(100px, 0, 0);
+}

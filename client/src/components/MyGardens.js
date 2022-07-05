@@ -1,5 +1,6 @@
 import React, {useEffect, useState} from 'react'
 import MyGardenItem from './MyGardenItem'
+import './MyGardens.css'
 
 function MyGardens({user, setCurrentGarden}) {
   const [myGardens, setMyGardens] = useState([])
@@ -23,10 +24,16 @@ function MyGardens({user, setCurrentGarden}) {
 
 
   return (
-    <div>
-      {renderGardens}
+    <div className="contain">
+      <div class="row">
+        <div class="row__inner">
+          {renderGardens}
+        </div>
+      </div>
     </div>
   )
 }
 
 export default MyGardens
+
+{/* <div id="my-gardens-page"> */}
