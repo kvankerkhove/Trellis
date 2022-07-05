@@ -74,10 +74,12 @@ function GardenGrid({selectedCrop, currentGarden}) {
   // console.log(rows)
   // console.log(columns)
   return (
+    <div>
     <div id='garden-grid-container'>
       <div id='garden-grid' style={gridStyle}>
           {renderTiles}
       </div>
+    </div>
     </div>
     
   )

@@ -1,6 +1,8 @@
-import React from 'react'
+import React, { useState } from 'react'
+import Errors from './Errors'
 
 function CreateGardenDropdown({user, handleCurrentGarden}) {
+    const [errors, setErrors] = useState([])
     if(!user) return null
     const user_id = +user.id
     console.log(user_id)
@@ -13,17 +15,28 @@ function CreateGardenDropdown({user, handleCurrentGarden}) {
           method: "POST",
           body: form,
         })
-        let garden = await req.json()
-        handleCurrentGarden(garden)
+
+        if(req.ok){
+            let garden = await req.json()
+            handleCurrentGarden(garden)
+        } else {
+            let err = await req.json()
+            setErrors(err.errors)
+        }
     }
 
+    console.log(errors)
+
   return (
-    <form onSubmit={handleCreateGarden} id="create-garden-form">
-        <input type="text" name="name" placeholder='a name for your garden'/>
-        <input type="text" name="rows" placeholder='length in ft'/>
-        <input type="text" name='columns' placeholder='height in ft'/>
-        <button type="submit">submit</button>
-    </form>
+    <div>
+        <form onSubmit={handleCreateGarden} id="create-garden-form">
+            <input type="text" name="name" placeholder='a name for your garden'/>
+            <input type="text" name="rows" placeholder='length in ft'/>
+            <input type="text" name='columns' placeholder='height in ft'/>
+            <button type="submit">submit</button>
+        </form>
+        { errors !== [] ? <Errors errors={errors}/> : null }
+    </div>
   )
 }
 

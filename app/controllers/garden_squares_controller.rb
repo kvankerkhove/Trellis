@@ -32,6 +32,15 @@ class GardenSquaresController < ApplicationController
         render json: garden_square, status: :created
     end
 
+    def garden_data
+        garden_squares = GardenSquare.sort_and_remove_fallow_squares(params[:id])
+        updated_squares = garden_squares.map do |square|
+            square.crop
+        end
+        render json: updated_squares
+
+    end
+
     private
 
     def find_garden_square
@@ -41,5 +50,6 @@ class GardenSquaresController < ApplicationController
     def garden_square_params
         params.permit(:square_number, :garden_id, :crop_id)
     end
+
 
 end

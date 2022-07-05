@@ -18,5 +18,6 @@ class SessionsController < ApplicationController
 
     def remove
         session.delete :current_garden
+        head :no_content
     end
 end
