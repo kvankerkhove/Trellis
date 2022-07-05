@@ -1,7 +1,7 @@
 import React from 'react'
 import './GardenTile.css'
 
-function GardenTile({id, selectedCrop, handleGardenSquare, square}) {
+function GardenTile({id, selectedCrop, handleGardenSquare, square, height, width}) {
   const handleClick = (e) => {
     e.target.src = selectedCrop.image
     // e.target.style.opacity = 1
@@ -13,14 +13,17 @@ function GardenTile({id, selectedCrop, handleGardenSquare, square}) {
 
 
 
+
   const handleDoubleClick = (e) => {
     alert(e.target.src)
   }
   return (
-      <div onClick={handleClick} onDoubleClick={handleDoubleClick} class='garden-tile' id={id}>
-        <img src={square.crop.image} height='75px' width='75px'/>
+      <div onClick={handleClick} onDoubleClick={handleDoubleClick} class='garden-tile' id={id} style={{height:{height}, width:{width}}} >
+        <img id="garden-tile-image" src={square.crop.image} height={height}  width={width}/>
       </div>
   )
 }
 
 export default GardenTile
+
+// height={height} width={width}

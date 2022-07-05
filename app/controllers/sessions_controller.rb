@@ -10,6 +10,12 @@ class SessionsController < ApplicationController
         end
     end
 
+    def assign
+        garden = Garden.find(params[:id])
+        session[:current_garden] = garden.id
+        render json: garden, status: :ok
+    end
+
     def destroy
         session.delete :current_user
         session.delete :current_garden

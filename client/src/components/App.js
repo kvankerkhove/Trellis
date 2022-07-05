@@ -17,6 +17,8 @@ function App() {
   const [crops, setCrops] = useState(null)
   const [currentGarden, setCurrentGarden] = useState(null)
 
+  console.log(currentGarden)
+
   // useEffect(() => {
   //   fetch("/current_user").then((r) => {
   //     if (r.ok) {
@@ -98,7 +100,7 @@ function App() {
           <CreateGarden crops={crops} user={user} currentGarden={currentGarden} setCurrentGarden={setCurrentGarden}/>
         </Route>
         <Route exact path='/my_gardens'>
-          <MyGardens/>
+          <MyGardens user={user} setCurrentGarden={setCurrentGarden}/>
         </Route>
         <Route exact path='/logout'>
           <Logout handleLogout={handleLogout}/>

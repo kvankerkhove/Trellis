@@ -33,6 +33,10 @@ class GardensController < ApplicationController
         render json: {}
     end
 
+    def all_gardens
+        render json: Garden.all.where("user_id = #{params[:user_id]}")
+    end
+
     private
 
     def find_garden

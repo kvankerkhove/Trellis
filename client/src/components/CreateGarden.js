@@ -9,6 +9,8 @@ function CreateGarden({crops, user, currentGarden, setCurrentGarden}) {
   const [showCropData, setShowCropData] = useState(false)
 
   // if(!currentGarden) return null
+  let height = '100px'
+  let width = '100px'
 
   const handleSelectedCrop = (selectedCrop) => {
     setSelectedCrop(selectedCrop)
@@ -54,7 +56,7 @@ function CreateGarden({crops, user, currentGarden, setCurrentGarden}) {
   return (
     <div id="create-garden-page">
       <Header crops={crops} handleSelectedCrop={handleSelectedCrop} selectedCrop={selectedCrop} user={user}  currentGarden={currentGarden} handleCurrentGarden={handleCurrentGarden}/>
-      {currentGarden ? <GardenGrid selectedCrop={selectedCrop} currentGarden={currentGarden}/> : null }
+      {currentGarden ? <GardenGrid selectedCrop={selectedCrop} currentGarden={currentGarden} height={height} width={width}/> : null }
       {currentGarden ? <button onClick={() => setShowCropData((showCropData) => !showCropData)}>{showCropData ? 'hide data' : 'show data'}</button> : null}
       {showCropData ? <GardenData currentGarden={currentGarden}/> : null}
       <br></br>

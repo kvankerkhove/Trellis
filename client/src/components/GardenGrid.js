@@ -2,14 +2,15 @@ import React, { useState, useEffect } from 'react'
 import GardenTile from './GardenTile'
 import './GardenGrid.css'
 
-function GardenGrid({selectedCrop, currentGarden}) {
+function GardenGrid({selectedCrop, currentGarden, height, width}) {
   const [rows, setRows] = useState(8)
   const [columns, setColumns] = useState(8)
   const [currentGardenSquares, setCurrentGardenSquares] = useState([])
 
-  console.log(currentGarden.id)
+
+  // console.log(currentGarden.id)
   const numberOfTiles = currentGardenSquares.length
-  console.log(currentGardenSquares)
+  // console.log(currentGardenSquares)
 
 
   useEffect(() => {
@@ -22,6 +23,12 @@ function GardenGrid({selectedCrop, currentGarden}) {
     .then(r => r.json())
     .then(garden_squares => setCurrentGardenSquares(garden_squares))
   }, [currentGarden])
+
+  // let containerWidth = (+width.slice(0, -2))*columns
+  // let containerHeight = (+height.slice(0, -2))*rows
+
+  console.log(`garden: ${currentGarden.name} columns: ${columns}, rows: ${rows}`)
+
 
   
 
@@ -62,7 +69,7 @@ function GardenGrid({selectedCrop, currentGarden}) {
 
   
   const renderTiles = currentGardenSquares.map((square, i) => {
-      return <GardenTile key={i} id={i + 1} selectedCrop={selectedCrop} handleGardenSquare={handleGardenSquare} square={square}/>
+      return <GardenTile key={i} id={i + 1} selectedCrop={selectedCrop} handleGardenSquare={handleGardenSquare} square={square} height={height} width={width}/>
   })
 
   const gridStyle = {
