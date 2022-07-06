@@ -1,16 +1,15 @@
 import React from 'react'
+import './Home.css'
 
 function Home({isLoggedIn, user}) {
   return (
     <div>
-    { isLoggedIn ? 
-    <>
-      <h1>Welcome, {user.first_name}</h1> 
-      <h2>Begin planning your garden.</h2>
-    </>
-    : null }
+      <div id="home-page-top-picture">
+        { isLoggedIn ? <h1 id="welcome">Welcome, {user.first_name}</h1> : null }
+      </div>
 
     </div>
+
   )
 }
 

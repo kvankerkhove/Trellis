@@ -36,7 +36,6 @@ function CreateGarden({crops, user, currentGarden, setCurrentGarden}) {
         body: JSON.stringify(squareData)
       })
   }
-    console.log('this is working')
   }
 
   const handleRefresh = () => {
@@ -50,7 +49,11 @@ function CreateGarden({crops, user, currentGarden, setCurrentGarden}) {
     });
   }
 
-  // console.log(currentGarden.garden_squares)
+
+
+  const handleDataClick = () => {
+    setShowCropData((showCropData) => !showCropData)
+  }
 
 
   return (
@@ -60,15 +63,18 @@ function CreateGarden({crops, user, currentGarden, setCurrentGarden}) {
       </div>
       <Header crops={crops} handleSelectedCrop={handleSelectedCrop} selectedCrop={selectedCrop} user={user}  currentGarden={currentGarden} handleCurrentGarden={handleCurrentGarden}/>
       {currentGarden ? <GardenGrid selectedCrop={selectedCrop} currentGarden={currentGarden} height={height} width={width}/> : null }
-      {currentGarden ? <button onClick={() => setShowCropData((showCropData) => !showCropData)}>{showCropData ? 'hide data' : 'show data'}</button> : null}
-      {showCropData ? <GardenData currentGarden={currentGarden}/> : null}
-      <br></br>
       {currentGarden ? <button onClick={handleRefresh}>Create New Garden</button> : null }
-      <div id="create-garden-bottom-picture"></div>
+      <div id="create-garden-bottom-picture">
+        {currentGarden ? <button id="button" onClick={handleDataClick}>{showCropData ? 'hide data' : 'show data'}</button>  : null}
+      </div>
+      {showCropData ? <GardenData className="garden-data" currentGarden={currentGarden}/> : null}
+      <br></br>
+      
     </div>
   )
 }
 
 export default CreateGarden
+
 
 // handleCurrentGarden={handleCurrentGarden}

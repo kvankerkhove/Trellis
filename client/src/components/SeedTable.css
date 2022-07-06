@@ -1,6 +1,15 @@
+#seed-table-container{
+    margin-bottom: 5%;
+    display: flex;
+    flex-direction: column;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+
+}
 #seed-table {
     border-collapse: collapse;
-    margin: 25px 0;
+    margin-top: 5%;
     font-size: 0.9em;
     font-family: sans-serif;
     min-width: 400px;

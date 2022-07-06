@@ -25,7 +25,6 @@ function CreateGardenDropdown({user, handleCurrentGarden}) {
         }
     }
 
-    console.log(errors)
 
   return (
     <div>

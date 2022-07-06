@@ -8,7 +8,6 @@ function GardenTile({id, selectedCrop, handleGardenSquare, square, height, width
     handleGardenSquare(square.id, selectedCrop)
     // console.log(square)
     // console.log(id)
-    console.log(e.target)
   }
 
 

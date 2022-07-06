@@ -17,7 +17,6 @@ function App() {
   const [crops, setCrops] = useState(null)
   const [currentGarden, setCurrentGarden] = useState(null)
 
-  console.log(currentGarden)
 
   // useEffect(() => {
   //   fetch("/current_user").then((r) => {
@@ -73,7 +72,6 @@ function App() {
   }
 
   const handleLogout = (response) => {
-    console.log(response)
     setIsLoggedIn(false)
     setCurrentGarden(null)
   }

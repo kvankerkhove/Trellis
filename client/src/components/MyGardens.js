@@ -7,7 +7,6 @@ function MyGardens({user, setCurrentGarden}) {
 
   // if(!user) return null
 
-  console.log(user)
   const userId = user.id
 
   useEffect(() => {

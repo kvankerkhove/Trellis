@@ -1,0 +1,10 @@
+#home-page-top-picture{
+    height: 400px;
+    background-image: url("https://images.unsplash.com/photo-1611843467160-25afb8df1074?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80");
+    background-position: center;
+    background-size: cover
+}
+
+#welcome{
+    margin: 0;
+}

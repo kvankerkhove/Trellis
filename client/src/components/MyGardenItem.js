@@ -1,14 +1,24 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import { useHistory } from 'react-router-dom'
 import GardenGrid from './GardenGrid'
 import './MyGardenItem.css'
 
 function MyGardenItem({garden, setCurrentGarden}) {
+  const [height, setHeight] = useState('')
+  const [width, setWidth] = useState('')
   const {id, name, rows, columns, garden_squares} = garden
 
   const history = useHistory()
-  let height = '25px'
-  let width = '25px'
+  useEffect (() => {
+    if(columns <= 6){
+      setHeight('50px')
+      setWidth('50px')
+    } else {
+      setHeight('25px')
+      setWidth('25px')
+    }
+
+  }, [garden])
 
   const handleEditClick = (e) => {
     console.log(garden)

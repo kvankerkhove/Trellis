@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import SeedTable from './SeedTable'
-import HarvestTable from './HarvestTable'
-import YieldTable from './YieldTable'
+import Schedule from './Schedule'
 
 
 function GardenData({currentGarden}) {
@@ -16,8 +15,7 @@ function GardenData({currentGarden}) {
   return (
     <div>
       <SeedTable currentGardenSquares={currentGardenSquares}/>
-      <HarvestTable />
-      <YieldTable />
+      <Schedule currentGarden={currentGarden} />
     </div>
   )
 }
