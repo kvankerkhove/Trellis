@@ -30,7 +30,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_06_28_173605) do
 
   create_table "garden_squares", force: :cascade do |t|
     t.integer "square_number"
-    t.string "start_date"
+    t.datetime "start_date"
     t.integer "garden_id"
     t.integer "crop_id"
     t.datetime "created_at", null: false

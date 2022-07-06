@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import './SeedTable.css'
+import moment from 'moment'
 
 function Schedule({currentGarden}) {
   const [cropSquares, setCropSquares] = useState([])
@@ -42,19 +43,23 @@ function Schedule({currentGarden}) {
 
   // console.log(dates)
   const renderCrops = keys.map(key => {
-    const date = cropSquares.find(square => square.crop.name === key).start_date
+    const date = cropSquares.find(square => square.crop.name === key).start_date.slice(0, 10)
     console.log(date)
 
     const dtm = cropSquares.find(square => square.crop.name === key).crop.days_to_maturity
     console.log(dtm)
+
+    const harvestDate = moment(date, "YYYY-MM-DD").add('days', dtm).format("MM/DD/YYYY");
+    console.log(harvestDate)
+
 
 
     return (
       <tr>
         <td>{key}</td>
         <td>{values[keys.indexOf(key)]} sq.ft</td>
-        <td><input type="date" value="2022-07-05"/></td>
-        <td>harvest date</td>
+        <td><input type="date" value={date}/></td>
+        <td>{harvestDate}</td>
         <td>{dtm}</td>
       </tr>
     )

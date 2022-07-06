@@ -3,6 +3,7 @@ import Header from './Header'
 import GardenGrid from './GardenGrid'
 import GardenData from './GardenData'
 import './CreateGarden.css'
+import moment from 'moment'
 
 function CreateGarden({crops, user, currentGarden, setCurrentGarden}) {
   const [selectedCrop, setSelectedCrop] = useState(null)
@@ -12,6 +13,7 @@ function CreateGarden({crops, user, currentGarden, setCurrentGarden}) {
   // if(!currentGarden) return null
   // let height = '75px'
   // let width = '75px'
+  let todaysDate = moment().format('YYYY-MM-DD')
 
   let height = '75vh'
   let width = '75vh'
@@ -29,6 +31,7 @@ function CreateGarden({crops, user, currentGarden, setCurrentGarden}) {
     for(let i = 1; i <= totalSquares; i++) {
       let squareData = {
         square_number: i,
+        start_date: todaysDate,
         garden_id: gardenId,
         crop_id: 1
       }

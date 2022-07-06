@@ -10,6 +10,7 @@ function GardenGrid({selectedCrop, currentGarden, height, width}) {
 
   // console.log(currentGarden.id)
   const numberOfTiles = currentGardenSquares.length
+  console.log(`tiles: ${numberOfTiles}`)
   // console.log(currentGardenSquares)
 
 
