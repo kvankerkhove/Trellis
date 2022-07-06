@@ -55,12 +55,16 @@ function CreateGarden({crops, user, currentGarden, setCurrentGarden}) {
 
   return (
     <div id="create-garden-page">
+      <div id="create-garden-top-picture">
+        <h1 id="saying">create something beautiful</h1>
+      </div>
       <Header crops={crops} handleSelectedCrop={handleSelectedCrop} selectedCrop={selectedCrop} user={user}  currentGarden={currentGarden} handleCurrentGarden={handleCurrentGarden}/>
       {currentGarden ? <GardenGrid selectedCrop={selectedCrop} currentGarden={currentGarden} height={height} width={width}/> : null }
       {currentGarden ? <button onClick={() => setShowCropData((showCropData) => !showCropData)}>{showCropData ? 'hide data' : 'show data'}</button> : null}
       {showCropData ? <GardenData currentGarden={currentGarden}/> : null}
       <br></br>
       {currentGarden ? <button onClick={handleRefresh}>Create New Garden</button> : null }
+      <div id="create-garden-bottom-picture"></div>
     </div>
   )
 }
