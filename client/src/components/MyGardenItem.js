@@ -10,12 +10,15 @@ function MyGardenItem({garden, setCurrentGarden}) {
 
   const history = useHistory()
   useEffect (() => {
-    if(columns <= 6){
-      setHeight('50px')
-      setWidth('50px')
+    if(columns <= 4 || rows <= 4){
+      setHeight('52px')
+      setWidth('52px')
+    } else if(columns <= 6 || rows <= 6){
+      setHeight('30px')
+      setWidth('30px')
     } else {
-      setHeight('25px')
-      setWidth('25px')
+      setHeight('22px')
+      setWidth('22px')
     }
 
   }, [garden])

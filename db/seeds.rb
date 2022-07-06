@@ -98,48 +98,6 @@ danny = User.create({
     password_confirmation: '12345'
 })
 
-katey_garden = Garden.create({
-    name: 'example',
-    rows: 10,
-    columns: 10,
-    user_id: katey.id
-})
 
-danny_garden = Garden.create({
-    name: 'dannys garden',
-    rows: 7,
-    columns: 10,
-    user_id: danny.id
-})
-
-GardenSquare.create({
-    square_number: 1,
-    garden_id: danny_garden.id,
-    crop_id: cucumber.id
-})
-
-GardenSquare.create({
-    square_number: 2,
-    garden_id: danny_garden.id,
-    crop_id: salad_radish.id
-})
-
-GardenSquare.create({
-    square_number: 11,
-    garden_id: katey_garden.id,
-    crop_id: carrot.id
-})
-
-GardenSquare.create({
-    square_number: 13,
-    garden_id: katey_garden.id,
-    crop_id: carrot.id
-})
-
-GardenSquare.create({
-    square_number: 14,
-    garden_id: katey_garden.id,
-    crop_id: escarole.id
-})
 
 puts 'Seeded 🌱'

@@ -6,6 +6,7 @@ function MyGardens({user, setCurrentGarden}) {
   const [myGardens, setMyGardens] = useState([])
 
   // if(!user) return null
+  
 
   const userId = user.id
 
@@ -24,6 +25,7 @@ function MyGardens({user, setCurrentGarden}) {
 
   return (
     <div className="contain">
+      { myGardens.length === 0 ? <h1 id="link">Build your first garden <a href='/create_garden'>here</a></h1> : null }
       <div class="row">
         <div class="row__inner">
           {renderGardens}

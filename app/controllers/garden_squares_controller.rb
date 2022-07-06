@@ -48,7 +48,7 @@ class GardenSquaresController < ApplicationController
     end
 
     def garden_square_params
-        params.permit(:square_number, :garden_id, :crop_id)
+        params.permit(:square_number, :start_date, :garden_id, :crop_id)
     end
 
 

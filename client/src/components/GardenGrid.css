@@ -1,6 +1,7 @@
 #garden-grid-container{
     display: flex;
     justify-content: center;
+    padding: 10px;
 }
 
 #garden-grid{

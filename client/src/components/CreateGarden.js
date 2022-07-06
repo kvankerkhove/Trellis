@@ -7,10 +7,14 @@ import './CreateGarden.css'
 function CreateGarden({crops, user, currentGarden, setCurrentGarden}) {
   const [selectedCrop, setSelectedCrop] = useState(null)
   const [showCropData, setShowCropData] = useState(false)
+  const [fetchingInProgress, setFetchingInProgress] = useState(false)
 
   // if(!currentGarden) return null
-  let height = '100px'
-  let width = '100px'
+  // let height = '75px'
+  // let width = '75px'
+
+  let height = '75vh'
+  let width = '75vh'
 
   const handleSelectedCrop = (selectedCrop) => {
     setSelectedCrop(selectedCrop)
@@ -62,7 +66,8 @@ function CreateGarden({crops, user, currentGarden, setCurrentGarden}) {
         <h1 id="saying">create something beautiful</h1>
       </div>
       <Header crops={crops} handleSelectedCrop={handleSelectedCrop} selectedCrop={selectedCrop} user={user}  currentGarden={currentGarden} handleCurrentGarden={handleCurrentGarden}/>
-      {currentGarden ? <GardenGrid selectedCrop={selectedCrop} currentGarden={currentGarden} height={height} width={width}/> : null }
+      
+      {currentGarden ? <GardenGrid selectedCrop={selectedCrop} currentGarden={currentGarden} height={height} width={width}/> : null } 
       {currentGarden ? <button onClick={handleRefresh}>Create New Garden</button> : null }
       <div id="create-garden-bottom-picture">
         {currentGarden ? <button id="button" onClick={handleDataClick}>{showCropData ? 'hide data' : 'show data'}</button>  : null}
