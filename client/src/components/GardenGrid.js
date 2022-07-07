@@ -6,6 +6,8 @@ function GardenGrid({selectedCrop, currentGarden, height, width}) {
   const [rows, setRows] = useState(8)
   const [columns, setColumns] = useState(8)
   const [currentGardenSquares, setCurrentGardenSquares] = useState([])
+  console.log(currentGarden.id)
+  
 
 
   // console.log(currentGarden.id)
@@ -23,7 +25,7 @@ function GardenGrid({selectedCrop, currentGarden, height, width}) {
     fetch(`/all_squares/${currentGarden.id}`)
     .then(r => r.json())
     .then(garden_squares => setCurrentGardenSquares(garden_squares))
-  }, [currentGarden])
+  }, [rows])
 
   // let containerWidth = (+width.slice(0, -2))*columns
   // let containerHeight = (+height.slice(0, -2))*rows
@@ -66,6 +68,8 @@ function GardenGrid({selectedCrop, currentGarden, height, width}) {
     // .then(r => r.json())
     // .then(data => console.log(data))
   }
+
+  console.log(currentGardenSquares)
 
 
   

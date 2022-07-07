@@ -27,8 +27,7 @@ function CreateGarden({crops, user, currentGarden, setCurrentGarden}) {
     setCurrentGarden(newGarden)
     let totalSquares = newGarden.rows * newGarden.columns
     let gardenId = +newGarden.id
-    console.log(gardenId)
-    for(let i = 1; i <= totalSquares; i++) {
+    for(let i = 1; i < totalSquares + 1; i++) {
       let squareData = {
         square_number: i,
         start_date: todaysDate,
@@ -71,7 +70,7 @@ function CreateGarden({crops, user, currentGarden, setCurrentGarden}) {
       <Header crops={crops} handleSelectedCrop={handleSelectedCrop} selectedCrop={selectedCrop} user={user}  currentGarden={currentGarden} handleCurrentGarden={handleCurrentGarden}/>
       
       {currentGarden ? <GardenGrid selectedCrop={selectedCrop} currentGarden={currentGarden} height={height} width={width}/> : null } 
-      {currentGarden ? <button onClick={handleRefresh}>Create New Garden</button> : null }
+      {currentGarden ? <button id="create-new-garden-btn" onClick={handleRefresh}>Save and Create New Garden</button> : null }
       <div id="create-garden-bottom-picture">
         {currentGarden ? <button id="button" onClick={handleDataClick}>{showCropData ? 'hide data' : 'show data'}</button>  : null}
       </div>

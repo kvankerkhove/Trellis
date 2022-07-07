@@ -6,6 +6,11 @@
     /* background-color: black; */
 }
 
+#create-new-garden-btn{
+    width: 150px;
+    align-self: center;
+}
+
 
 #create-garden-top-picture{
     height: 250px;

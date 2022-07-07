@@ -4,6 +4,7 @@ import './MyGardens.css'
 
 function MyGardens({user, setCurrentGarden}) {
   const [myGardens, setMyGardens] = useState([])
+  // const [updatedGardens, setUpdatedGardens] = useState(myGardens)
 
   // if(!user) return null
   
@@ -16,9 +17,14 @@ function MyGardens({user, setCurrentGarden}) {
     .then(data => setMyGardens(data))
   }, [])
 
+  const handleDelete = (deletedGarden) => {
+    const remainingGardens = myGardens.filter(garden => garden.id !== deletedGarden.id)
+    setMyGardens(remainingGardens)
+  }
+
 
   const renderGardens = myGardens.map(garden => {
-    return <MyGardenItem key={garden.id} garden={garden} setCurrentGarden={setCurrentGarden}/>
+    return <MyGardenItem key={garden.id} garden={garden} setCurrentGarden={setCurrentGarden} handleDelete={handleDelete}/>
   })
 
 

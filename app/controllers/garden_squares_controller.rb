@@ -14,7 +14,7 @@ class GardenSquaresController < ApplicationController
 
     def update
         garden_square = find_garden_square.update!(garden_square_params)
-        render json: garden_square, status: :ok
+        render json: find_garden_square, status: :ok
     end
 
     def destroy

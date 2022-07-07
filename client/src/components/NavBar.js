@@ -20,9 +20,9 @@ function NavBar({isLoggedIn, handleLogout}) {
   if (isLoggedIn) {        
       links = 
       <>
-        <Link to='/logout' exact>
-          <button onClick={handleLogoutClick}>Logout</button>
-        </Link>
+        {/* <Link to='/logout' exact> */}
+          <Link class='link' id='logout-button' onClick={handleLogoutClick}>Logout</Link>
+        {/* </Link> */}
       </>
   } else {
       links = 
@@ -56,8 +56,8 @@ function NavBar({isLoggedIn, handleLogout}) {
     <div class='container circleBehind'>
       <div class='padding'>
         <div className='nav-first-half'>
-          <Link class='link' exact to='/'>
-            <img src={logo} alt="logo" height="80px"/>
+          <Link exact to='/'>
+            <img id='logo' src={logo} alt="logo" height="80px"/>
           </Link>
           <Link class='link' exact to='/crops'>
             Crops

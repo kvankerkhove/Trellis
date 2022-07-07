@@ -29,8 +29,9 @@ class GardensController < ApplicationController
     end
 
     def destroy
-        find_garden.destroy!
-        render json: {}
+        garden = find_garden
+        garden.destroy!
+        render json: garden
     end
 
     def all_gardens

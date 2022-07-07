@@ -14,57 +14,62 @@ function Schedule({currentGarden}) {
       })
   }, [])
 
-  // console.log(cropSquares)
   let cropMap = {}
-
+  //creates crop map with name of crop and number of times that crop appears in squares, stores in cropMap
   cropSquares.forEach((square) => {
-    // console.log(square.updated_at.slice(0,10))
     if(Object.keys(cropMap).includes(square.crop.name)){
       cropMap[square.crop.name] += 1
 
     } else {
       cropMap[square.crop.name] = 1
     }
+  })
 
-})
+  //array of keys and values of cropMap
+  const crops = Object.keys(cropMap)
+  const numberOfCrops = Object.values(cropMap)
 
+  //function that renders each row of the schedule table
+  const renderCrops = crops.map(crop => {
+    const date = cropSquares.find(square => square.crop.name === crop).start_date.slice(0, 10)
+
+    const dtm = cropSquares.find(square => square.crop.name === crop).crop.days_to_maturity
+
+    const harvestDate = (date, dtm) => {
+      return moment(date, "YYYY-MM-DD").add('days', dtm).format("MM/DD/YYYY");
+    } 
+
+    let harvest = harvestDate(date, dtm)
+
+    const cropSquareId = cropSquares.find(square => square.crop.name === crop).id
   
 
-  console.log(cropMap)
-  const keys = Object.keys(cropMap)
-  const values = Object.values(cropMap)
-  // console.log(keys, values)
-
-  // const dates = keys.forEach((key) => {
-  //   let crops = cropSquares.filter(square => square.crop.name === key)
-  //   console.log(crops)
-
-  // })
-
-  // console.log(dates)
-  const renderCrops = keys.map(key => {
-    const date = cropSquares.find(square => square.crop.name === key).start_date.slice(0, 10)
-    console.log(date)
-
-    const dtm = cropSquares.find(square => square.crop.name === key).crop.days_to_maturity
-    console.log(dtm)
-
-    const harvestDate = moment(date, "YYYY-MM-DD").add('days', dtm).format("MM/DD/YYYY");
-    console.log(harvestDate)
-
-
+    const handleOnChange = (e) => {
+      console.log(e.target.value)
+      fetch(`/garden_squares/${cropSquareId}`, {
+        method: "PATCH",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify({start_date: e.target.value})
+      })
+      .then(r => r.json())
+      .then(data => {
+        harvest = harvestDate(data.start_date, dtm)
+      })
+    }
 
     return (
       <tr>
-        <td>{key}</td>
-        <td>{values[keys.indexOf(key)]} sq.ft</td>
-        <td><input type="date" value={date}/></td>
-        <td>{harvestDate}</td>
+        <td>{crop}</td>
+        <td>{numberOfCrops[crops.indexOf(crop)]} sq.ft</td>
+        <td><input onChange={handleOnChange} type="text" placeholder={date} onFocus={(e) => e.target.type='date'} onBlur={(e) => e.target.type='text'} /></td>
+        <td>{harvest}</td>
         <td>{dtm}</td>
       </tr>
     )
-
   })
+  
 
 
 
@@ -84,7 +89,7 @@ function Schedule({currentGarden}) {
               {renderCrops}
           </tbody>
       </table>
-      <small>*DTM = Days To Maturity; from starting seed to harvest</small>
+      <small>*DTM = Days To Maturity, from starting seed to harvest</small>
     </div>
   )
 }

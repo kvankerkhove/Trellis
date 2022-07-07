@@ -20,7 +20,7 @@
 .tile-card{
     display: flex;
     flex-direction: column;
-    height: 45vh;
+    height: 50vh;
     width: 300px;
     background-color: rgb(199, 233, 199);
     text-align: center;
@@ -31,13 +31,26 @@
 .grid{
     background-color: brown;
 }
-.button{
+#btns{
+    align-self: flex-end;
+}
+
+#name{
+    font-size: 40px;
+}
+/* .button{
     width: 25%;
     text-align: center;
     margin-left: auto;
     margin-right: auto;
-
 }
+
+.delete-btn{
+    width: 25%;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+} */
 
 
 .tile__title {
