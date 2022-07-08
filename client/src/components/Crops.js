@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import './Crops.css'
+// import escarole from '../images/escarole.png'
 
 function Crops() {
   const [crops, setCrops] = useState([])
@@ -9,6 +10,10 @@ function Crops() {
     .then(r => r.json())
     .then(data => setCrops(data))
   }, [])
+
+  // console.log(escarole)
+  // let cropImages = [escarole]
+
 
   // useEffect(() => {
   //   window.location.reload(false);
@@ -33,11 +38,15 @@ function Crops() {
     let id = `${family.toLowerCase()}`
     let cropsInFamily = crops.filter(crop => crop.family === family)
     let renderCropsInFamily = cropsInFamily.map(crop => {
+      console.log(crop.image)
+      // let findCrop = cropImages.find(imageUrl => imageUrl.includes(crop.name.toLowerCase()))
       return (
-        <div class="crop-tile">
-          <h1>{crop.name}</h1>
-          <img src={crop.image} height='100px' width='100px'/>
-          <small><b>Watering needs:</b> {crop.watering_needs}</small>
+        <div class="crop-tile-container">
+          <div class="crop-tile">
+            <h1>{crop.name}</h1>
+            <img src={ require(`../images/${crop.image}`)} height='100px' width='100px'/>
+            <small><b>Watering needs:</b> {crop.watering_needs}</small>
+          </div>
         </div>
       )
     })

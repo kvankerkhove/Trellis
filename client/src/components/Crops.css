@@ -58,6 +58,11 @@
     background-color: rgb(255, 231, 231);
   }
 
+  .crop-tile-container{
+      display: flex;
+      flex-direction: row;
+  }
+
   .crop-tile{
       display: flex;
       flex-direction: column;
