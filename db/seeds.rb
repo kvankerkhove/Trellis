@@ -55,6 +55,18 @@ tomato = Crop.create({
     image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQVV9pKUx9zn8n-5f-kjteMT7ECYH4_ydvAVw&usqp=CAU"
 })
 
+eggplant = Crop.create({
+    name: "Eggplant",
+    family: "Nightshade",
+    plants_per_sq_ft: 1,
+    days_to_maturity: 75,
+    projected_yield: 10,
+    yield_unit: 'lbs',
+    watering_needs: "Early in the growing season, watering plants at the base of the plant daily in the morning. Avoid getting the leaves wet, as it can cause mold. As temperatures increase, you might need to water tomato plants twice a day. Garden tomatoes typically require 1-2 inches of water a week. Tomato plants grown in containers need more water than garden tomatoes.",
+    details: "Don't start too early—leggy, root-bound, or flowering transplants can cause stunting and reduce early production. About 5–6 weeks before transplanting, sow 1/4in deep in 20-row flats with 20 seeds/row, or in 200-cell trays with 1 seed/cell; lightly cover. Keep mix at 75–85°F (24–29°C) with moderate moisture. At first true leaf, pot-up to 50-cell trays or 4in pots, depending on expected transplant timing",
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQVV9pKUx9zn8n-5f-kjteMT7ECYH4_ydvAVw&usqp=CAU"
+})
+
 salad_radish = Crop.create({
     name: 'Salad Radish',
     family: 'Brassica',

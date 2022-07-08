@@ -50,6 +50,7 @@ function CreateGarden({crops, user, currentGarden, setCurrentGarden}) {
         // setIsLoggedIn(false)
         // setUser(null);
         // history.push('/login')
+        setShowCropData(false)
         setCurrentGarden(null)
       }
     });

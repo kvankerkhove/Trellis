@@ -49,6 +49,8 @@ function NavBar({isLoggedIn, handleLogout}) {
     :
     null
 
+   
+
   
 
 
