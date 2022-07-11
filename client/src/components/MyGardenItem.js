@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react'
 import { useHistory } from 'react-router-dom'
 import GardenGrid from './GardenGrid'
 import './MyGardenItem.css'
+import { TiEdit } from 'react-icons/ti'
+import { TiDeleteOutline } from 'react-icons/ti'
 
 function MyGardenItem({garden, setCurrentGarden, handleDelete}) {
   const [height, setHeight] = useState('')
@@ -11,20 +13,23 @@ function MyGardenItem({garden, setCurrentGarden, handleDelete}) {
   const history = useHistory()
   useEffect (() => {
     if(columns <= 5 && rows <= 5){
-      setHeight('52px')
-      setWidth('52px')
+      // setHeight('52px')
+      // setWidth('52px')
+      setHeight('50rem')
+      setWidth('50rem')
     } else if (columns <= 7 && rows <= 7){
-      setHeight('35px') 
-      setWidth('35px')
+      setHeight('35rem') 
+      setWidth('35rem')
     } else {
-      setHeight('22px')
-      setWidth('22px')
+      setHeight('25rem')
+      setWidth('25rem')
     }
 
   }, [garden])
 
+
+  //When edit button is clicked, sets session to clicked garden's id on backend
   const handleEditClick = (e) => {
-    console.log(garden)
     fetch("/assign_garden", {
       method: "POST",
       headers: {
@@ -49,10 +54,10 @@ function MyGardenItem({garden, setCurrentGarden, handleDelete}) {
 
   return (
     <div className="tile">
-      <div className="tile-card">
+      <div className="tile-card" >
         <div id="btns">
-          <button className="button" onClick={handleEditClick}>Edit</button>
-          <button className="delete-btn" onClick={handleDeleteGarden}>Delete</button>
+          <TiEdit className="button" onClick={handleEditClick} ></TiEdit>
+          <TiDeleteOutline className="delete-btn" onClick={handleDeleteGarden}>Delete</TiDeleteOutline>
         </div>
         <GardenGrid className="grid" currentGarden={garden} height={height} width={width}/>
         <small id="name">{name}</small>

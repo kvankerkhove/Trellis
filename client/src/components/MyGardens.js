@@ -31,7 +31,7 @@ function MyGardens({user, setCurrentGarden}) {
 
   return (
     <div className="contain">
-      { myGardens.length === 0 ? <h1 id="link">Build your first garden <a href='/create_garden'>here</a></h1> : null }
+      { myGardens.length === 0 ? <h1 className="my-garden-header">Build your first garden <a href='/create_garden'>here</a></h1> : <h1 className="my-garden-header">Select a garden to keep editing or delete</h1> }
       <div class="row">
         <div class="row__inner">
           {renderGardens}

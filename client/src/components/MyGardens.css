@@ -1,3 +1,7 @@
+
+@import url('https://fonts.googleapis.com/css2?family=BIZ+UDGothic&family=Cormorant+Garamond:wght@300&family=Cormorant+SC&display=swap');
+
+
 /* #my-gardens-page{
     display: flex;
     justify-content: center;
@@ -25,14 +29,19 @@ h1 {
  text-align: center;
 }
 
-#link{
+/* #link{
+    margin: 0;
+} */
+
+.my-garden-header{
+    font-family: 'Cormorant SC', serif;
     margin: 0;
 }
 
 .contain {
  background-image: url('https://images.unsplash.com/photo-1466692476868-aef1dfb1e735?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80');
  background-size: cover;
- height: 100vh;
+ height: 100%;
 
 }
 .row {
@@ -41,7 +50,6 @@ h1 {
  width: 66%;
  height: 100vh;
  margin: auto;
- padding: 100px;
  /* margin-top: 25%; */
 
  text-align: center;
