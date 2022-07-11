@@ -44,17 +44,20 @@ function CreateGarden({crops, user, currentGarden, setCurrentGarden}) {
   }
   }
 
+  //Removes current_garden session and directs to create garden form
   const handleRefresh = () => {
     fetch("/remove", { method: "DELETE" }).then((r) => {
       if (r.ok) {
-        // setIsLoggedIn(false)
-        // setUser(null);
-        // history.push('/login')
         setShowCropData(false)
         setCurrentGarden(null)
       }
     });
   }
+
+
+  // setIsLoggedIn(false)
+        // setUser(null);
+        // history.push('/login')
 
 
 

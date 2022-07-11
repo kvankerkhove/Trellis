@@ -14,7 +14,6 @@ class GardensController < ApplicationController
 
     def show
         current_garden = Garden.find(session[:current_garden])
-        # puts "User ID:#{session[:current_user]}"
         render json: current_garden
     end
 
@@ -48,3 +47,5 @@ class GardensController < ApplicationController
         params.permit(:name, :rows, :columns, :user_id)
     end
 end
+
+# puts "User ID:#{session[:current_user]}"

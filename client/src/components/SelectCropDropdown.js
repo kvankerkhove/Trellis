@@ -25,7 +25,7 @@ function SelectCropDropdown({crops, handleSelectedCrop, selectedCrop}) {
             <option>Select Crop</option>
             {renderCrops}
         </select>
-        {cropIsChosen ? <img id='crop-dropdown-tile' src={selectedCrop.image} alt={selectedCrop.name}/> : null}
+        {cropIsChosen ? <img id='crop-dropdown-tile' src= {require(`../images/${selectedCrop.image}`)} alt={selectedCrop.name}/> : null}
     </div>
   )
 }

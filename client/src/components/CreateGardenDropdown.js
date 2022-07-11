@@ -7,6 +7,7 @@ function CreateGardenDropdown({user, handleCurrentGarden}) {
     const user_id = +user.id
     console.log(user_id)
 
+  //creates new garden and sets session to garden's id on backend
     const handleCreateGarden = async (e) => {
         e.preventDefault()
         let form = new FormData(document.querySelector("#create-garden-form"))

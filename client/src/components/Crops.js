@@ -41,8 +41,8 @@ function Crops() {
       console.log(crop.image)
       // let findCrop = cropImages.find(imageUrl => imageUrl.includes(crop.name.toLowerCase()))
       return (
-        <div class="crop-tile-container">
-          <div class="crop-tile">
+        <div className="crop-tile-container">
+          <div className="crop-tile">
             <h1>{crop.name}</h1>
             <img src={ require(`../images/${crop.image}`)} height='100px' width='100px'/>
             <small><b>Watering needs:</b> {crop.watering_needs}</small>
@@ -86,7 +86,7 @@ function Crops() {
   
   return (
     <div>
-      <nav class="navbar">
+      <nav className="navbar">
       <ul>
         {/* <li><a class="tab" href="#home">Asters</a></li>
         <li><a class="tab" href="#services">Brassicas</a></li>
@@ -95,12 +95,13 @@ function Crops() {
         {renderTabs}
       </ul>
       </nav>
-      <div>
+      <div className="container">
+        
         {/* <div id="home" class="page">Home</div>
         <div id="services" class="page">Services</div>
         <div id="about" class="page">About</div>
         <div id="contact" class="page">Contact</div> */}
-        {renderPages}
+            {renderPages}
       </div>
     </div>
   )

@@ -55,16 +55,45 @@
   }
   
   .page:nth-child(even){
-    background-color: rgb(255, 231, 231);
+    background-color: #D3F2DF;
   }
+
+  .page:nth-child(odd){
+    background-color: white;
+  }
+
 
   .crop-tile-container{
       display: flex;
       flex-direction: row;
+      margin: auto;
+      /* overflow: scroll;
+      overflow-y: hidden;
+      width: 66%;
+      height: 100vh;
+      margin: auto;
+      padding: 100px; */
+      /* margin-top: 25%; */
+
+      /* text-align: center; */
+      /* margin-top: 5%;
+      margin-bottom: 5%; */
   }
 
   .crop-tile{
       display: flex;
       flex-direction: column;
-      width: 25%;
+      width: 20rem;
+      height: 20rem;
+      /* border: 1px solid black; */
+      box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.5); 
+      overflow: scroll;
+      /* transition: 450ms transform;
+      font-size: 0;
+      white-space: nowrap;
+      margin: 70.3125px 0;
+      padding-bottom: 10px; */
   }
+
+
+  
