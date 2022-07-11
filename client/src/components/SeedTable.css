@@ -18,6 +18,8 @@
 
 #seed-table thead tr {
     background-color: #009879;
+    /* background-color: #c94407; */
+
     color: #ffffff;
     text-align: left;
 }
@@ -37,6 +39,8 @@
 
 #seed-table tbody tr:last-of-type {
     border-bottom: 2px solid #009879;
+    /* border-bottom: 2px solid #ac1919; */
+
 }
 
 /* .column{

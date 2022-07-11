@@ -11,11 +11,13 @@ Rails.application.routes.draw do
   get "/garden_data/:id", to: "garden_squares#garden_data"
   get "/all_squares/:id", to: "garden_squares#all_squares"
   post "/all_squares/:id", to: "garden_squares#create_squares"
+  
   # current_garden sessions
   post "/create_garden", to: "gardens#create"
   get "/current_garden", to: "gardens#show"
   post "/assign_garden", to: "sessions#assign"
   delete "/remove", to: "sessions#remove"
+
   # current_user sessions
   post "/signup", to: "users#create"
   get "/current_user", to: "users#show"

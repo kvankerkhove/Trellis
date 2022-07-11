@@ -6,7 +6,18 @@ import './CreateGarden.css'
 import moment from 'moment'
 
 function CreateGarden({crops, user, currentGarden, setCurrentGarden}) {
-  const [selectedCrop, setSelectedCrop] = useState(null)
+  const [selectedCrop, setSelectedCrop] = useState({
+    "id": 1,
+    "name": "Fallow",
+    "family": "N/A",
+    "plants_per_sq_ft": 0,
+    "days_to_maturity": 0,
+    "projected_yield": 0,
+    "yield_unit": "n/a",
+    "watering_needs": "n/a",
+    "details": "n/a",
+    "image": "fallow.png"
+    })
   const [showCropData, setShowCropData] = useState(false)
   const [fetchingInProgress, setFetchingInProgress] = useState(false)
 
@@ -69,17 +80,22 @@ function CreateGarden({crops, user, currentGarden, setCurrentGarden}) {
   return (
     <div id="create-garden-page">
       <div id="create-garden-top-picture">
-        <h1 id="saying">create something beautiful</h1>
+        <div className="create">grow</div>
+        <div className="create">
+          <span>something beautiful</span>
+        </div>
+        {/* <h1 id="saying">create something beautiful</h1> */}
       </div>
       <Header crops={crops} handleSelectedCrop={handleSelectedCrop} selectedCrop={selectedCrop} user={user}  currentGarden={currentGarden} handleCurrentGarden={handleCurrentGarden}/>
       
       {currentGarden ? <GardenGrid selectedCrop={selectedCrop} currentGarden={currentGarden} height={height} width={width}/> : null } 
+      
+      {currentGarden ? <GardenData className="garden-data" currentGarden={currentGarden}/> : null }
       {currentGarden ? <button id="create-new-garden-btn" onClick={handleRefresh}>Save and Create New Garden</button> : null }
-      <div id="create-garden-bottom-picture">
-        {currentGarden ? <button id="button" onClick={handleDataClick}>{showCropData ? 'hide data' : 'show data'}</button>  : null}
-      </div>
-      {showCropData ? <GardenData className="garden-data" currentGarden={currentGarden}/> : null}
-      <br></br>
+
+      <div id="create-garden-bottom-picture"></div>
+
+      {/* <br></br> */}
       
     </div>
   )
@@ -89,3 +105,6 @@ export default CreateGarden
 
 
 // handleCurrentGarden={handleCurrentGarden}
+
+
+// {currentGarden ? <button id="button" onClick={handleDataClick}>{showCropData ? 'hide data' : 'show data'}</button>  : null}

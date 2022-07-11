@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import './SeedTable.css'
 import moment from 'moment'
 
-function Schedule({currentGarden}) {
+function Schedule({currentGarden, refresh}) {
   const [cropSquares, setCropSquares] = useState([])
   
   useEffect(() => {
@@ -12,7 +12,7 @@ function Schedule({currentGarden}) {
       let filteredSquares = squares.filter(square => square.crop_id !== 1)
       setCropSquares(filteredSquares)
       })
-  }, [])
+  }, [refresh])
 
   let cropMap = {}
   //creates crop map with name of crop and number of times that crop appears in squares, stores in cropMap

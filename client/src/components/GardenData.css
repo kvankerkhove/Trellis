@@ -1,0 +1,11 @@
+#garden-data{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#refresh{
+    color: rgb(177, 226, 188);
+}
+

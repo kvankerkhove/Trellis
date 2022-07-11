@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import Errors from './Errors'
+import './CreateGardenDropdown.css'
 
 function CreateGardenDropdown({user, handleCurrentGarden}) {
     const [errors, setErrors] = useState([])
@@ -28,12 +29,21 @@ function CreateGardenDropdown({user, handleCurrentGarden}) {
 
 
   return (
-    <div>
+    <div id="create-garden-container">
         <form onSubmit={handleCreateGarden} id="create-garden-form">
-            <input type="text" name="name" placeholder='a name for your garden'/>
-            <input type="text" name="rows" placeholder='length in ft'/>
-            <input type="text" name='columns' placeholder='height in ft'/>
-            <button type="submit">submit</button>
+          <div id="text-inputs">
+            <small>name: </small>
+            <input className="text-input" type="text" name="name"/>
+          </div>
+          <br></br>
+          <div id="number-inputs">
+            <small>height:</small>
+            <input className="number-input" type="number" name="rows" min="3" max="10"/>
+            <small>length:</small>
+            <input className="number-input" type="number" name='columns' min="3" max="10"/>
+          </div>
+          <br></br>
+          <button type="submit">submit</button>
         </form>
         { errors !== [] ? <Errors errors={errors}/> : null }
     </div>

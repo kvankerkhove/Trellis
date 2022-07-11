@@ -47,17 +47,17 @@ function App() {
     validateUser()
   }, [])
 
+  //on every refresh, validateGarden checks if there is a current_garden stored in a session
   useEffect(() => {
-    // console.log("its working")
     const validateGarden = async () => {
       let req = await fetch("/current_garden");
       if (req.ok) {
         setCurrentGarden(await req.json())
-        // let user = await req.json()
       } 
     };
     validateGarden()
   }, [])
+
 
   useEffect(() => {
     fetch('/crops')
