@@ -139,6 +139,84 @@ cabbage = Crop.create({
     image: "cabbage.png"
 })
 
+beet = Crop.create({
+    name: "Beet",
+    family: "Chenopod",
+    plants_per_sq_ft: 12,
+    days_to_maturity: 50,
+    projected_yield: 12,
+    yield_unit: 'pc',
+    watering_needs: "If you don't get any rain, a light to moderate watering twice a week is usually enough. When watering, be careful not to wash away the soil around the beets.",
+    details: "Sow 2-3 seeds 1/2in deep 8in apart. 4 times per square foot. Thin out to 3 plants per bunch.  For a continuous supply of greens and small tender beets, sow seed at 2-week intervals until 8 weeks before regular heavy frosts are expected.",
+    image: "beet.png"
+})
+
+scallions = Crop.create({
+    name: "Scallions",
+    family: "Allium",
+    plants_per_sq_ft: 24,
+    days_to_maturity: 60,
+    projected_yield: 24,
+    yield_unit: 'pc',
+    watering_needs: " Scallions have a shallow root system, so regular watering and/or rainfall is a must as soon as the soil starts to dry out. However, do not let the plants sit in wet soil, which can lead to rot and other diseases. The soil should be consistently moist but not soggy.",
+    details: "Sow 6–8 seeds per cell in 72-cell trays at the same time you would seed bulbing onions for transplant. Transplant seedling clusters 6–8in apart. 4 per square foot.",
+    image: "scallions.png"
+})
+
+fennel = Crop.create({
+    name: "Fennel",
+    family: "Umbel",
+    plants_per_sq_ft: 4,
+    days_to_maturity: 80,
+    projected_yield: 4,
+    yield_unit: "pc",
+    watering_needs: "Water regularly, giving plants at least an inch of water per week (more in hot weather). Stick your finger into the soil to check moisture; if the top inch is dry, it's time to water.",
+    details: "Sow midspring through early summer, 2 seeds 1/4in deep 6in apart. 4 per square foot. Thin to 1 plant per bunch",
+    image: "fennel.png"
+})
+
+spinach = Crop.create({
+    name: "Spinach",
+    family: "Chenopod",
+    plants_per_sq_ft: 5,
+    days_to_maturity: 30,
+    projected_yield: .5,
+    yield_unit: "lbs",
+    watering_needs: "Water spinach frequently to keep the soil evenly moist but not soggy. Regular watering is essential in warm weather to prevent bolting. In general, spinach needs around 1 to 1 1/2 inches of water per week. Rather than a weekly deep watering, it's better to water several times a week.",
+    details: "Spinach germinates best in cool soil. Begin sowing in early spring as soon as the ground can be worked. Sow 1-2 seed 1/2in deep every 6in. 5 per square ft",
+    image: "spinach.png"
+})
+
+parsley = Crop.create({
+    name: "Parsley",
+    family: "Herbs",
+    plants_per_sq_ft: 4,
+    days_to_maturity: 75,
+    projected_yield: 7,
+    yield_unit: "bu",
+    watering_needs: "Parsley will need watering about 2-3 times per week. If parsley runs out of water, it will let you know by wilting. However, as soon as you rewater, in no time it will be standing back upright again.",
+    details: "Transplanting recommended: sow indoors, takes about 3 weeks to germinate. If direct seeding, sow in spring after the danger of frost has passed, about 1/4- 1/2in deep, 2 seeds, 8in apart. Thin out to 1 plant per bunch",
+    image: "parsley.png"
+})
+
+cilantro = Crop.create({
+    name: "Cilantro",
+    family: "Herbs",
+    plants_per_sq_ft: 4,
+    days_to_maturity: 50,
+    projected_yield: 5,
+    yield_unit: "bu",
+    watering_needs: "Keep the soil regularly moist, but not soaked. Good drainage is essential, as cilantro has deep roots. Aim for about one inch of water per week.",
+    details: "Direct seed spring through late summer. Sow 2 seeds 1/4- 1/2in deep, 6in apart. For leaf harvest, there is no need to thin, as cilantro continues to grow well even when sown thickly. For coriander seed production, thin to 1 per bunch. Successive sowings can be done every 2-3 weeks for continual harvest of leaves.",
+    image: "cilantro.png"
+})
+
+chard = Crop.create({
+    name: "Chard",
+    family: "Chenopod",
+    plants_per_sq_ft: 2,
+})
+
 katey = User.create({
     first_name: 'Katey',
     last_name: 'Van',
