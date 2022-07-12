@@ -89,7 +89,54 @@ cucumber = Crop.create({
     watering_needs: "The main care requirement for cucumbers is consistent watering. They need at least one inch of water at the base of the plant per week (or more, if temperatures are particularly high). Getting the leaves of the plant wet can cause downy mildew and mold. Inconsistent watering leads to bitter-tasting fruit.",
     details: "Sow indoors 1–2 seeds/cell, 3–4 weeks before transplanting. Keep temperature above 70°F (21°C) day and 60°F (16°C) night. Transplant 12in apart in rows 5–6' apart. Do not disturb roots when transplanting. If directly sowing into ground, wait until soil is warm, at least 70°F (21°C). Cucumber seeds will not germinate at a soil temperature below 50°F (10°C). Sow 2 seeds/ft., 1/2in deep, in rows 6' apart. Thin to 12in apart.",
     image: 'cucumber.png'
+})
 
+kale = Crop.create({
+    name: 'Kale',
+    family: 'Brassica',
+    plants_per_sq_ft: 1,
+    days_to_maturity: 65,
+    projected_yield: 6,
+    yield_unit: 'lbs',
+    watering_needs: "Kale likes a nice, even supply of water, about 1 to 1.5 inches per week. Mulch with compost, finely ground leaves, weed-free hay, straw, pine needles, or finely ground bark to keep the soil cool and moist and to keep down weeds.",
+    details: "Plant from early spring to approximately 3 months before expected fall frost. For bunching: Sow 3–4 seeds every 12–18in, ½in deep, in rows 18–36in apart. Thin to 1 plant per group."
+    image: "kale.png"
+})
+
+lettuce = Crop.create({
+    name: 'Lettuce',
+    family: "Aster",
+    plants_per_sq_ft: 1,
+    days_to_maturity: 50,
+    projected_yield: 1,
+    yield_unit: "pc",
+    watering_needs: "A shallow-rooted plant, butterhead lettuce benefits from frequent, light waterings. Although water requirements depend on temperatures and soil, butterhead generally requires 1 to 2 inches per week.",
+    details: "Seeds can germinate well in soils as low as 40°F (4°C) but often poorly above 75°F (24°C). Sow 2 seeds per square foot . Cover lightly to 1/8in and firm gently. Dry soil must be watered to ensure coolness and moisture for uniform germination.",
+    image: 'lettuce.png'    
+})
+
+pepper = Crop.create({
+    name: "Pepper",
+    family: "Nightshade",
+    plants_per_sq_ft: 1,
+    days_to_maturity: 80,
+    projected_yield: 6,
+    yield_unit: "pc",
+    watering_needs: "During the longest hottest days of summer, water every day. During cooler weather and during spring and fall water plants every 2-3 days.",
+    details: "Sow seeds in desired medium 6–8 weeks prior to transplanting. Transplant out after frost when the soil is warm and weather is settled. Ideal seedlings have buds, but no open flowers. Space pepper plants 1 per square foot",
+    image: 'pepper.png'
+})
+
+cabbage = Crop.create({
+    name: "Cabbage",
+    family: "Brassica",
+    plants_per_sq_ft: 1,
+    days_to_maturity: 75,
+    projected_yield: 1,
+    yield_unit: "pc",
+    watering_need: "Cabbage needs about 1.5 inches (4 cm) of water per week to thrive. Plan to water daily if your plants have well-draining soil. Otherwise, just add water often enough to keep the soil moist. Always water early in the morning and close to the base of the plant."
+    details: "Start seedlings as above in May and transplant to the garden in June-July. To ensure mature heads, seed the crop early in areas where heavy freezes occur early in fall."
+    image: "cabbage.png"
 })
 
 katey = User.create({
