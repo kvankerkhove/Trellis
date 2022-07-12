@@ -1,6 +1,6 @@
 import './App.css'
 import { useState, useEffect } from 'react'
-import { Route, Switch } from 'react-router-dom'
+import { Route, Switch, useHistory } from 'react-router-dom'
 import NavBar from './NavBar'
 import Home from './Home'
 import SignUp from './SignUp'
@@ -16,6 +16,8 @@ function App() {
   const [errors, setErrors] = useState([])
   const [crops, setCrops] = useState(null)
   const [currentGarden, setCurrentGarden] = useState(null)
+
+  const history = useHistory()
 
 
   // useEffect(() => {
@@ -69,11 +71,13 @@ function App() {
   const handleUserLogin = (loginUser) => {
     setUser(loginUser)
     setIsLoggedIn(true)
+    history.push('/create_garden')
   }
 
   const handleLogout = (response) => {
     setIsLoggedIn(false)
     setCurrentGarden(null)
+    history.push('/login')
   }
 
   

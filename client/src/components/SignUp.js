@@ -52,99 +52,106 @@ function SignUp({handleUserLogin}) {
   console.log(passwordConfirmation)
 
   return (
-    <>
-      <form onSubmit={handleSignup} id="signup-form">
-        <div>
-          <label htmlFor="inputFirstName">First Name</label>
-          <div>
-              <input
-              type="text"
-              id="first_name"
-              autoComplete="off"
-              placeholder='first name'
-              name='first_name'
-              />
-          </div>
-
-          <br></br>
-            
-          <div>
-            <label htmlFor="inputLastName">Last Name</label>
+    <div id="signup-page">
+      <div id="signup-padding">
+        <div id="signup-container">
+          <form onSubmit={handleSignup} id="signup-form">
             <div>
-                <input
-                type="text"
-                id="last_name"
-                autoComplete="off"
-                placeholder='last name'
-                name='last_name'
-                />
+              <label htmlFor="inputFirstName">First Name</label>
+              <div>
+                  <input
+                  type="text"
+                  id="first_name"
+                  autoComplete="off"
+                  placeholder='first name'
+                  name='first_name'
+                  />
+              </div>
+
+              <br></br>
+                
+              <div>
+                <label htmlFor="inputLastName">Last Name</label>
+                <div>
+                    <input
+                    type="text"
+                    id="last_name"
+                    autoComplete="off"
+                    placeholder='last name'
+                    name='last_name'
+                    />
+                </div>
+              </div>
+
+              <br></br>
+
+              <div>
+                <label htmlFor="inputLastName">Plant Hardiness Zone</label>
+                <div>
+                  <select id="zone" name="plant_hardiness_zone">
+                    <option>Choose Zone</option>
+                    {createZones()}
+                  </select>
+                </div>
+              </div>
+
+              <br></br>
+
+              <div>
+                <label htmlFor="inputUsername">Username</label>
+                <div>
+                    <input
+                    type="text"
+                    id="username"
+                    autoComplete="off"
+                    placeholder='username'
+                    name='username'
+                    />
+                </div>
+              </div>
+              
+              <br></br>
+
+              <div>
+                <label htmlFor="inputPassword">Password</label>
+                <div>
+                    <input
+                    type="password"
+                    id="password"
+                    placeholder='password'
+                    name='password'
+                    onChange={handlePasswordChange}
+                    />
+                </div>
+              </div>
+
+              <br></br>
+
+              <div>
+                <label htmlFor="inputPassword">Confirm Password</label>
+                <div>
+                    <input
+                    type="password"
+                    id="password_confirmation"
+                    placeholder='password confirmation'
+                    name='password_confirmation'
+                    onChange={handlePasswordConfirmationChange}
+                    />
+                    { password !== "" && password === passwordConfirmation ? <small>✅</small> : <small></small>}
+                </div>
+              </div>
+              <br></br>
+              <button type="submit" class="btn btn-outline-primary">Sign Up</button>
+              { errors !== [] ? <Errors errors={errors}/> : null }
+              <div>
+                  <p>Click <a href="/login">here</a> to return to Login</p>
+              </div>
             </div>
-          </div>
-
-          <br></br>
-
-          <div>
-            <label htmlFor="inputLastName">Plant Hardiness Zone</label>
-            <div>
-              <select id="zone" name="plant_hardiness_zone">
-                <option>Choose Zone</option>
-                {createZones()}
-              </select>
-            </div>
-          </div>
-
-          <br></br>
-
-          <div>
-            <label htmlFor="inputUsername">Username</label>
-            <div>
-                <input
-                type="text"
-                id="username"
-                autoComplete="off"
-                placeholder='username'
-                name='username'
-                />
-            </div>
-          </div>
-          
-          <br></br>
-
-          <div>
-            <label htmlFor="inputPassword">Password</label>
-            <div>
-                <input
-                type="password"
-                id="password"
-                placeholder='password'
-                name='password'
-                onChange={handlePasswordChange}
-                />
-            </div>
-          </div>
-
-          <br></br>
-
-          <div>
-            <label htmlFor="inputPassword">Confirm Password</label>
-            <div>
-                <input
-                type="password"
-                id="password_confirmation"
-                placeholder='password confirmation'
-                name='password_confirmation'
-                onChange={handlePasswordConfirmationChange}
-                />
-                { password !== "" && password === passwordConfirmation ? <small>✅</small> : <small></small>}
-            </div>
-          </div>
-          <br></br>
-          <button type="submit" class="btn btn-outline-primary">Sign Up</button>
-          { errors !== [] ? <Errors errors={errors}/> : null }
+          </form>
         </div>
-      </form>
-      
-    </>
+      </div>
+    </div>
+
   )
 }
 

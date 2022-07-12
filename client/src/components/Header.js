@@ -4,10 +4,13 @@ import CreateGardenDropdown from './CreateGardenDropdown'
 import './Header.css'
 
 function Header({crops, handleSelectedCrop, selectedCrop, user, handleCurrentGarden, currentGarden}) {
+  if(!user) return null
+  console.log(user)
   return (
     <div id="dropdown">
       {!currentGarden ?
       <div id="create-garden-dropdown">
+        <h1>Welcome, {user.first_name}</h1>
         <h1>Start designing your garden!</h1>
         <h2>First, choose a name for your garden and the dimensions of your plot (ft x ft)</h2>
         <CreateGardenDropdown user={user} handleCurrentGarden={handleCurrentGarden}/>

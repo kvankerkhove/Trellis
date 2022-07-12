@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import Errors from './Errors'
+import './LogIn.css'
 
 function LogIn({handleUserLogin}) {
   const [errors, setErrors] = useState([])
@@ -21,39 +22,51 @@ function LogIn({handleUserLogin}) {
   }
 
   return (
-    <form id='login-form' onSubmit={handleLogin}>
-      <div style={{backgroundColor: "white", padding:"5%", borderStyle:"solid", borderRadius:"1%"}}>
-          <div>
-            <input 
-              type="text" 
-              name="username" 
-              placeholder="Enter Username"/>
-          </div>
+    <div id="login-page">
+      <div id="login-padding">
+        <div id="login-container">
+          <h1>Welcome Back.</h1>
+          <small>Sign in to get growing.</small>
           <br></br>
-          <div>
-            <input 
-              type="password" 
-              name="password"
-              placeholder="Enter Password" 
-              autoComplete="off"/>
-          </div>
-          <br></br>
-          <div>
-            <button type="submit">Login</button>
-          </div>
-          { errors !== [] ? <Errors errors={errors}/> : null }
-          <div>
+          <form id='login-form' onSubmit={handleLogin}>
             <div>
+                <div>
+                  <input 
+                    type="text" 
+                    name="username" 
+                    placeholder="Enter Username"/>
+                </div>
                 <br></br>
-                <small>or</small>
+                <div>
+                  <input 
+                    type="password" 
+                    name="password"
+                    placeholder="Enter Password" 
+                    autoComplete="off"/>
+                </div>
+                <br></br>
+                <div>
+                  <button type="submit">Login</button>
+                </div>
+                { errors !== [] ? <Errors errors={errors}/> : null }
+                <div>
+                  <div>
+                      <br></br>
+                      <small>or</small>
+                  </div>
+                </div>
+                <div>
+                  <p>Don't have account? <a href="/signup" id="signup">Sign up here</a></p>
+                </div>
             </div>
-          </div>
-          <div>
-            <p>Don't have account? <a href="/signup" id="signup">Sign up here</a></p>
-          </div>
+          </form>
+        </div>
       </div>
-    </form>
+    </div>
+    
   )
 }
 
 export default LogIn
+
+// style={{backgroundColor: "white", padding:"5%", borderStyle:"solid", borderRadius:"1%"}}

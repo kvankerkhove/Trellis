@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Abel&family=BIZ+UDGothic&family=Cormorant+Garamond:wght@300&family=Cormorant+SC&display=swap');
+
 #home-page-top-picture{
     height: 40rem;
     background-image: url("https://images.unsplash.com/photo-1611843467160-25afb8df1074?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80");
@@ -16,8 +18,27 @@
 
 #first-slogan{
     margin-top: 5.5rem;
-    font-size: 5.5rem;
+    font-size: 5rem;
+    /* color: #D3F2DF; */
     color: #D3F2DF;
+    /* -webkit-text-stroke: .0001rem #407055; */
+    text-shadow: .05rem .05rem #407055 ;
+    font-family: 'Cormorant SC', serif;
+
+}
+
+#sign-in-button{
+    margin-top: 6.5rem;
+    background: none;
+    color: white;
+    border: 1px solid white;
+    font-size: 2rem;
+}
+
+#sign-in-button:hover{
+    background-color: white;
+    color: black
+
 }
 
 #middle-section{
@@ -33,7 +54,7 @@
 #first-half-middle-section{
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-between;
     height: 40rem;
     margin-top: 10rem;
     margin-bottom: 10rem;
@@ -55,6 +76,7 @@
 
 
 #first-paragraph {
+    margin-top: 3rem;
     width: 30rem;
     text-align: center;
 }
@@ -128,6 +150,9 @@
 .harvest-basket{
     display: inline-block;
     opacity: 0;
+    box-shadow:
+    -60px -60px 0 -40px #a1bdac,
+    60px 60px 0 -40px #D3F2DF;
     transform: translateY(4em) scale(.5);
     transition: transform 4s .25s cubic-bezier(0,1,.3,1),
                 opacity .3s .25s ease-out;
@@ -139,7 +164,10 @@
 .tomato-trellis-pic{
     display: inline-block;
     opacity: 0;
-    transform: translateX(4em);
+    box-shadow:
+    60px -60px 0 -40px #D3F2DF,
+    -60px 60px 0 -40px #a1bdac;
+    transform: translateX(22em);
     transition: transform 4s .25s cubic-bezier(0,1,.3,1),
                 opacity .3s .25s ease-out;
     /* max-width: 600px;
@@ -150,6 +178,9 @@
 .chard{
     display: inline-block;
     opacity: 0;
+    box-shadow:
+    60px -60px 0 -40px #D3F2DF,
+    -60px 60px 0 -40px #a1bdac;
     transform: translateX(0em);
     transition: transform 4s .25s cubic-bezier(0,1,.3,1),
                 opacity .3s .25s ease-out;
@@ -161,6 +192,9 @@
 .potting-mix{
     display: inline-block;
     opacity: 0;
+    box-shadow:
+    60px -60px 0 -40px #a1bdac,
+    -60px 60px 0 -40px #D3F2DF;
     transform: translateY(0em);
     transition: transform 4s .25s cubic-bezier(0,1,.3,1),
                 opacity .3s .25s ease-out;
@@ -189,6 +223,20 @@
     opacity: 1;
     transform: translateY(4em);
 }
+
+.first-slogan {
+    /* transform: scale(.5);
+    transition: transform 4s .25s cubic-bezier(0,1,.3,1),
+    filter 10s 10s ease-out;
+    will-change: transform; */
+    transform: scale(.5);
+    transition: transform 2s .2s cubic-bezier(0,.5,.75,1), filter 10s 2s ease-out;
+    will-change: transform;
+  }
+  
+.animate-first-slogan {
+    transform: translate(0, 75%) scale(1.25);
+  }
 
 
 

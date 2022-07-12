@@ -24,6 +24,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_06_28_173605) do
     t.string "watering_needs"
     t.string "details"
     t.string "image"
+    t.string "url"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

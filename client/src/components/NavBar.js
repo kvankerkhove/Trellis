@@ -30,9 +30,9 @@ function NavBar({isLoggedIn, handleLogout}) {
         <Link class='link' exact to='/login'>
           Login
         </Link>
-        <Link class='link' exact to='/signup'>
+        {/* <Link class='link' exact to='/signup'>
           Signup
-        </Link>
+        </Link> */}
       </>
   }
 

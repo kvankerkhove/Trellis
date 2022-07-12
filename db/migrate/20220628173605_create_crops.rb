@@ -10,6 +10,7 @@ class CreateCrops < ActiveRecord::Migration[7.0]
       t.string :watering_needs
       t.string :details
       t.string :image
+      t.string :url
 
       t.timestamps
     end

@@ -1,15 +1,21 @@
 import React, { useEffect } from 'react'
 import { useInView } from 'react-intersection-observer'
+import { useHistory } from 'react-router-dom'
 import './Home.css'
 import logo from '../images/logo.png'
 
 
-function Home() {
+function Home({isLoggedIn}) {
   const { ref: myPic1, inView: pic1IsVisible} = useInView()
   const { ref: myPic2, inView: pic2IsVisible} = useInView()
   const { ref: myPic3, inView: pic3IsVisible} = useInView()
   const { ref: myPic4, inView: pic4IsVisible} = useInView()
   const { ref: myPic5, inView: pic5IsVisible} = useInView()
+  const { ref: myHeader, inView: headerIsVisible } = useInView()
+
+  const history = useHistory()
+
+  console.log(isLoggedIn)
 
 
   // let scroll = window.requestAnimationFrame || function(callback){
@@ -19,18 +25,21 @@ function Home() {
   const three = 'animate-chard'
   const four = 'animate-harvest-basket'
   const five = 'animate-potting-mix'
+  const animateHeader = 'animate-first-slogan'
 
   const uno = pic1IsVisible
   const dos = pic2IsVisible
   const tres = pic3IsVisible
   const quatro = pic4IsVisible
   const cinco = pic5IsVisible
+  const header = headerIsVisible
   
   let tomatoHandsPic = document.querySelectorAll('.tomato-hands-pic')
   let tomatoTrellisPic = document.querySelectorAll('.tomato-trellis-pic')
   let chard = document.querySelectorAll('.chard')
   let harvestBasket = document.querySelectorAll('.harvest-basket')
   let pottingMix = document.querySelectorAll('.potting-mix')
+  let firstHeader = document.querySelectorAll('.first-slogan')
 
 
     
@@ -103,6 +112,7 @@ function Home() {
     loop(chard, three, tres)
     loop(harvestBasket, four, quatro)
     loop(pottingMix, five, cinco)
+    loop(firstHeader, animateHeader, header)
 
     console.log(pic1IsVisible, pic2IsVisible, pic3IsVisible, pic4IsVisible, pic5IsVisible)
 
@@ -111,6 +121,11 @@ function Home() {
   //  loop()
     
     // loop()
+
+    const handleSignInClick = () => {
+      history.push('/login')
+
+    }
 
   
 
@@ -121,14 +136,17 @@ function Home() {
       <header id="home-page-top-picture" className="show-on-scroll">
         {/* { isLoggedIn ? <h1 id="welcome">Welcome, {user.first_name}</h1> : null } */}
         <br></br>
-        <h1 id="first-slogan">Optimize your garden space</h1>
+        <h1 ref={myHeader} className='first-slogan' id="first-slogan">Optimize your garden space</h1>
+        {isLoggedIn ? null : <button id="sign-in-button" onClick={handleSignInClick}>sign in</button> }
       </header>
       <div id="middle-section">
         <div id="first-half-middle-section">
           <div id="first-paragraph">
             <h2>Create your dream garden</h2>
-            <p>At Trellis, we believe in making the most out of your space, thats why we've created an app where you can optimize the amount of food you can grow in your garden</p>
-            <p>ldfsjlkfdjsl jfowjeow jdoiwj efJDfiow dks JFoewj dsklf FSe ogjoemdlsjfo jfjncdkjoe jcdfjocwjckld  jf jeoiwjdjfs mfkl ipofew i jfpr cnlkp fksdlj dji e jfoe jfd</p>
+            <br></br>
+            <p>At Trellis, we believe in making the most out of your space, thats why we've created an app where you can maximize the amount of food you can grow in your garden.</p>
+            <br></br>
+            <p>By incorporating biointensive spacing practices, your garden will be prolific while simultaneously increasing biodiversity and sustaining the fertility of the soil. Healthy soil means a healthy garden! </p>
           </div>
           <img ref={myPic1} className='tomato-hands-pic' id="tomato-hands-pic" src="https://images.unsplash.com/photo-1461354464878-ad92f492a5a0?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80" />
         </div>
