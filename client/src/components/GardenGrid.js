@@ -6,14 +6,11 @@ function GardenGrid({selectedCrop, currentGarden, height, width}) {
   const [rows, setRows] = useState(8)
   const [columns, setColumns] = useState(8)
   const [currentGardenSquares, setCurrentGardenSquares] = useState([])
-  console.log(currentGarden.id)
   
 
 
-  // console.log(currentGarden.id)
   const numberOfTiles = currentGardenSquares.length
-  console.log(`tiles: ${numberOfTiles}`)
-  // console.log(currentGardenSquares)
+
 
 
   useEffect(() => {
@@ -30,15 +27,12 @@ function GardenGrid({selectedCrop, currentGarden, height, width}) {
   // let containerWidth = (+width.slice(0, -2))*columns
   // let containerHeight = (+height.slice(0, -2))*rows
 
-  console.log(`garden: ${currentGarden.name} columns: ${columns}, rows: ${rows}`)
+
 
 
   
 
   const handleGardenSquare = (squareId, crop) => {
-    console.log(`square_id: ${squareId}`)
-    console.log(`crop id: ${crop.id}`)
-    console.log(`garden id: ${currentGarden.id}`)
 
     const updateCropObj = {
       crop_id: crop.id
@@ -52,7 +46,7 @@ function GardenGrid({selectedCrop, currentGarden, height, width}) {
       body: JSON.stringify(updateCropObj)
     })
     .then(r => r.json())
-    .then(data => console.log(data))
+    // .then(data => console.log(data))
     // let squareInfo = {
     //   square_number: id,
     //   crop_id: +crop.id,
@@ -69,7 +63,7 @@ function GardenGrid({selectedCrop, currentGarden, height, width}) {
     // .then(data => console.log(data))
   }
 
-  console.log(currentGardenSquares)
+
 
 
   
@@ -83,8 +77,7 @@ function GardenGrid({selectedCrop, currentGarden, height, width}) {
     gridTemplateRows: `repeat(${rows}, 1fr)`,
   }
 
-  // console.log(rows)
-  // console.log(columns)
+ 
   return (
     <div>
     <div id='garden-grid-container'>

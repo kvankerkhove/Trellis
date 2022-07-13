@@ -59,7 +59,7 @@ function NavBar({isLoggedIn, handleLogout}) {
       <div class='padding'>
         <div className='nav-first-half'>
           <Link exact to='/'>
-            <img id='logo' src={logo} alt="logo" height="80px"/>
+            <img id='logo' src={logo} alt="logo"/>
           </Link>
           <Link class='link' exact to='/crops'>
             Crops

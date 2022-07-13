@@ -4,8 +4,6 @@ import './SeedTable.css'
 function SeedTable({currentGardenSquares}) {
     let hashMap = {}
     currentGardenSquares.forEach((square) => {
-        // console.log(square.id)
-        // console.log(Object.keys(hashMap).includes(square.id))
         if(Object.keys(hashMap).includes(square.id.toString())){
             hashMap[square.id] = hashMap[square.id] + +square.plants_per_sq_ft
 
@@ -20,40 +18,29 @@ function SeedTable({currentGardenSquares}) {
 
     let yieldMap = {}
     currentGardenSquares.forEach((square) => {
-        // console.log(square.id)
-        // console.log(Object.keys(hashMap).includes(square.id))
         if(Object.keys(yieldMap).includes(square.id.toString())){
             yieldMap[square.id] = +yieldMap[square.id] + +square.projected_yield
 
         } else {
             yieldMap[square.id] = square.projected_yield
-            // console.log(yieldMap)
         }
     })
 
-    // console.log(yieldMap)
 
     let crops = Object.keys(yieldMap)
     let yields = Object.values(yieldMap) 
-    // console.log(crops)
-    // console.log(yields)
+
     let unitValues = crops.map(crop => {
         return currentGardenSquares.find((square) => square.id === +crop).yield_unit
     })
-    // console.log(unitValues)
-
-    // console.log(hashMap)
-    // console.log(keys)
-    // console.log(updated_values)
 
     const renderNeededSeeds = keys.map(key => {
         // let changeToNum = +key
         let plant = currentGardenSquares.find(square => square.id === +key)
         let totalNumOfPlants = currentGardenSquares.filter(square => square.id === +key).length
-        // console.log(totalNumOfPlants)
         
         return (
-        <tr>
+        <tr key={keys.indexOf(key)}>
             <td>{plant.name}</td>
             <td>{plant.plants_per_sq_ft}</td>
             <td>{plant.plants_per_sq_ft * totalNumOfPlants}</td>
@@ -63,7 +50,6 @@ function SeedTable({currentGardenSquares}) {
         )
     })
 
-    // console.log(renderNeededSeeds)
   return (
     <div id='seed-table-container'>
          <table id="seed-table">

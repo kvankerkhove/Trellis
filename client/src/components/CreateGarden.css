@@ -12,7 +12,7 @@
   font-weight:300;
   font-size:32px;
   /* padding-top:40vh; */
-  height:25vh;
+  height:32.5vh;
   overflow:hidden;
   -webkit-backface-visibility: hidden;
   -webkit-perspective: 1000;
@@ -111,7 +111,9 @@ color: white;
 
 #create-garden-bottom-picture{
     /* height: 200px; */
-    height: 15rem;
+    /* height: 15rem; */
+    height:30vh;
+
     background-image: url("https://images.unsplash.com/photo-1654578513390-3efb00ded111?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1742&q=80");
     background-position: bottom center;
     background-size: cover;

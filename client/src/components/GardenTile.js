@@ -2,15 +2,12 @@ import React from 'react'
 import './GardenTile.css'
 
 function GardenTile({id, selectedCrop, handleGardenSquare, square, height, width}) {
-  console.log(selectedCrop)
 
 
   const handleClick = (e) => {
     e.target.src = require(`../images/${selectedCrop.image}`)
     // e.target.style.opacity = 1
     handleGardenSquare(square.id, selectedCrop)
-    // console.log(square)
-    // console.log(id)
   }
 
 

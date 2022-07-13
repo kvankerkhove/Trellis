@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Abel&family=BIZ+UDGothic&family=Cormorant+Garamond:wght@300&family=Cormorant+SC&display=swap');
 
 #home-page-top-picture{
-    height: 40rem;
+    height: 100vh;
     background-image: url("https://images.unsplash.com/photo-1611843467160-25afb8df1074?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80");
     background-position: center;
     background-size: cover;
@@ -17,8 +17,8 @@
 }
 
 #first-slogan{
-    margin-top: 5.5rem;
-    font-size: 5rem;
+    margin-top: 22vh;
+    font-size: 5vw;
     /* color: #D3F2DF; */
     color: #D3F2DF;
     /* -webkit-text-stroke: .0001rem #407055; */
@@ -42,33 +42,38 @@
 }
 
 #middle-section{
-    height: 45rem;
+    height: 100vh;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    margin-left: 10rem;
-    margin-right: 10rem;
+    align-items: center;
+    text-align: center;
+    margin-left: 10vw;
+    margin-right: 10vw;
     align-items: center;
 }
 
 #first-half-middle-section{
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    height: 40rem;
-    margin-top: 10rem;
-    margin-bottom: 10rem;
+    /* justify-content: space-between; */
+    text-align: center;
+    align-items: center;
+    height: 75vh;
+    margin-top: 10vh;
+    margin-bottom: 10vh;
 
 }
 
 
 #tomato-trellis-pic{
-    height: 35rem;
+    height: 40vw;
     /* opacity: .9; */
 }
 
 #tomato-hands-pic{
-    height: 20rem;
+    width: 32vw;
+    text-align: center;
     /* opacity: .9; */
     
 }
@@ -76,13 +81,26 @@
 
 
 #first-paragraph {
-    margin-top: 3rem;
-    width: 30rem;
+    /* margin-top: 2vh; */
+    /* margin-left: 5vh; */
+    width: 40vw;
     text-align: center;
+    font-family: 'Cormorant SC', serif;
+    color: #407055;
+    margin-bottom: 12vh;
+
+}
+
+#first-paragraph h2{
+    font-size: 3vw;
+}
+
+#first-paragraph p{
+    font-size: 1.25vw;
 }
 
 #middle-section-picture{
-    height: 25rem;
+    height: 50vh;
     background-image: url("https://images.unsplash.com/photo-1601001815894-4bb6c81416d7?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80");
     background-size: cover;
     background-position: 50% 68%;
@@ -90,19 +108,21 @@
 }
 
 #second-slogan{
-    margin-top: 5.5rem;
-    font-size: 4.5rem;
+    font-size: 8vh;
     color: #D3F2DF;
+    /* -webkit-text-stroke: .0001rem #407055; */
+    text-shadow: .05rem .05rem #407055 ;
+    font-family: 'Cormorant SC', serif;
 }
 
 #last-section{
-    height: 55rem;
+    height: 100vh;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    margin-left: 5rem;
-    margin-right: 5rem;
+    margin-left: 5vw;
+    margin-right: 5vw;
 
 }
 
@@ -114,7 +134,7 @@
 }
 
 #chard{
-    height: 35rem;
+    height: 75vh;
     /* opacity: .9; */
     
 
@@ -136,6 +156,12 @@
 #second-paragraph {
     width: 15rem;
     text-align: center;
+    font-family: 'Cormorant SC', serif;
+    color: #407055;
+}
+
+#second-paragraph h2{
+    font-size: 2.5vw;
 }
 
 #logo-home{

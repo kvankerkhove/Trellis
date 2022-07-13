@@ -6,10 +6,8 @@ function SelectCropDropdown({crops, handleSelectedCrop, selectedCrop}) {
     if (!crops) return null
 
     const allCropsExceptFallow = crops.filter(crop => crop.name !== "Fallow")
-    console.log(allCropsExceptFallow)
 
     const fallow = crops.find(crop => crop.name === "Fallow")
-    console.log(fallow)
 
     const renderCrops = allCropsExceptFallow.map(crop => {
         return <option key={crop.id} className="option" id={crop.id}>{crop.name}</option>

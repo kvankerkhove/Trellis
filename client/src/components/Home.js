@@ -15,7 +15,6 @@ function Home({isLoggedIn}) {
 
   const history = useHistory()
 
-  console.log(isLoggedIn)
 
 
   // let scroll = window.requestAnimationFrame || function(callback){
@@ -86,20 +85,16 @@ function Home({isLoggedIn}) {
   //   observer.observe(target);
   // });
 
-  // console.log(observer)
 
  
     function loop(elements, animationClass, inView){
       elements.forEach((element) => {
-        console.log(element)
         if(inView){
           element.classList.add(animationClass)
-          console.log(element.className)
         } else {
           if(element.classList.contains(animationClass)){
             element.classList.remove(animationClass)
           }
-          console.log(element.className)
           
         }
     
@@ -113,8 +108,6 @@ function Home({isLoggedIn}) {
     loop(harvestBasket, four, quatro)
     loop(pottingMix, five, cinco)
     loop(firstHeader, animateHeader, header)
-
-    console.log(pic1IsVisible, pic2IsVisible, pic3IsVisible, pic4IsVisible, pic5IsVisible)
 
     
 
@@ -158,7 +151,7 @@ function Home({isLoggedIn}) {
       <div id="last-section">
         <img ref={myPic3} className='chard' id='chard' src="https://images.unsplash.com/photo-1621459555843-9a77f1d03fae?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80" />
         <div id="second-paragraph">
-            <h2>What this app offers?</h2>
+            <h2>What this app offers:</h2>
             <p>At Trellis, we believe in making the most out of your space, thats why we've created an app where you can optimize the amount of food you can grow in your garden</p>
             <p>ldfsjlkfdjsl jfowjeow jdoiwj efJDfiow dks JFoewj dsklf FSe ogjoemdlsjfo jfjncdkjoe jcdfjocwjckld  jf jeoiwjdjfs mfkl ipofew i jfpr cnlkp fksdlj dji e jfoe jfd</p>
           </div>

@@ -18,6 +18,7 @@ function CreateGarden({crops, user, currentGarden, setCurrentGarden}) {
     "details": "n/a",
     "image": "fallow.png"
     })
+    // const [refresh, setRefresh] = useState(true)
   const [showCropData, setShowCropData] = useState(false)
   const [fetchingInProgress, setFetchingInProgress] = useState(false)
 
@@ -52,6 +53,7 @@ function CreateGarden({crops, user, currentGarden, setCurrentGarden}) {
         },
         body: JSON.stringify(squareData)
       })
+      
   }
   }
 

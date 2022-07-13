@@ -10,10 +10,11 @@
 }
 
 #crop-dropdown-bar{
-    width: 5.5rem;
-    height: 2rem;
+    width: 7vw;
+    height: 3vh;
     margin-right: .5rem;
     font-family: 'Cormorant SC', serif;
+    font-size: 1.5vw;
 
 }
 

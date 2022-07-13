@@ -7,5 +7,10 @@
 
 #refresh{
     color: rgb(177, 226, 188);
+    cursor: pointer;
+}
+
+#refresh:hover{
+    color: #009879;
 }
 

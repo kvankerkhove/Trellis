@@ -5,7 +5,6 @@ import './Header.css'
 
 function Header({crops, handleSelectedCrop, selectedCrop, user, handleCurrentGarden, currentGarden}) {
   if(!user) return null
-  console.log(user)
   return (
     <div id="dropdown">
       {!currentGarden ?

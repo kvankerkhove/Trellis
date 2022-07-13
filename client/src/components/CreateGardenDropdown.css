@@ -12,7 +12,7 @@
     justify-content: flex-start;
     align-items: center;
     text-align: center;
-    width: 13rem;
+    width: 15vw;
     margin: auto;
 }
 
@@ -26,8 +26,8 @@
 }
 
 .text-input{
-    font-size: 1.25rem;
-    width: 10rem;
+    font-size: 1.25vw;
+    width: 9vw;
     color: #009879; 
     border: 1px solid #009879;
     border-radius: 5px;
@@ -44,8 +44,9 @@
 }
 
 .number-input{
-    font-size: 1.25rem;
-    width: 2.5rem;
+    font-size: 1.25vw;
+    width: 2vw;
+    text-align: center;
     color: #009879; 
     border: 1px solid #009879;
     border-radius: 5px;
@@ -55,14 +56,15 @@
 
 small{
     margin-left: .5rem;
+    font-size: 1vw;
 }
 
 button{
     font-family: 'Cormorant SC', serif;
-    font-size: 1.25rem;
+    font-size: 1.25vw;
     align-self: flex-end;
-    padding: .25rem;
-    margin: .5rem;
+    padding: .25vw;
+    /* margin: .5rem; */
     transition-duration: 0.4s;
     cursor: pointer;
     background-color: white; 

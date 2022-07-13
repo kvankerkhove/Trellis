@@ -19,19 +19,7 @@ function App() {
 
   const history = useHistory()
 
-
-  // useEffect(() => {
-  //   fetch("/current_user").then((r) => {
-  //     if (r.ok) {
-  //       r.json().then((user) => setUser(user));
-  //     } else {
-  //       r.json().then((err) => console.log(err.error))
-  //     }
-  //   });
-  // }, []);
-
   useEffect(() => {
-    // console.log("its working")
     const validateUser = async () => {
       let req = await fetch("/current_user");
       if (req.ok) {

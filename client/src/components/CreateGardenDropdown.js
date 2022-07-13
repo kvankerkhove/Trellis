@@ -6,7 +6,6 @@ function CreateGardenDropdown({user, handleCurrentGarden}) {
     const [errors, setErrors] = useState([])
     if(!user) return null
     const user_id = +user.id
-    console.log(user_id)
 
   //creates new garden and sets session to garden's id on backend
     const handleCreateGarden = async (e) => {
@@ -31,6 +30,7 @@ function CreateGardenDropdown({user, handleCurrentGarden}) {
   return (
     <div id="create-garden-container">
         <form onSubmit={handleCreateGarden} id="create-garden-form">
+          <br></br>
           <div id="text-inputs">
             <small>name: </small>
             <input className="text-input" type="text" name="name"/>

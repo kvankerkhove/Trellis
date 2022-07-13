@@ -4,22 +4,32 @@ import './MyGardens.css'
 
 function MyGardens({user, setCurrentGarden}) {
   const [myGardens, setMyGardens] = useState([])
+  // const [gardenUser, setGardenUser] = useState(null)
   // const [updatedGardens, setUpdatedGardens] = useState(myGardens)
 
-  // if(!user) return null
-  
-
-  const userId = user.id
-
+  // useEffect(() => {
+  //   fetch('/current_user')
+  //   .then(r => r.json())
+  //   .then(user => setGardenUser(user))
+  // }, [])
   useEffect(() => {
-    fetch(`/all_gardens/${userId}`)
+
+    fetch(`/all_gardens/${user.id}`)
     .then(r => r.json())
     .then(data => setMyGardens(data))
   }, [])
 
+
+  // console.log(`garden user: ${gardenUser}`)
+
+  // const userId = user.id
+
+  
+
   const handleDelete = (deletedGarden) => {
     const remainingGardens = myGardens.filter(garden => garden.id !== deletedGarden.id)
     setMyGardens(remainingGardens)
+    setCurrentGarden(null)
   }
 
 

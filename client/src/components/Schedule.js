@@ -4,6 +4,7 @@ import moment from 'moment'
 
 function Schedule({currentGarden, refresh}) {
   const [cropSquares, setCropSquares] = useState([])
+  const [scheduleUpdate, setScheduleUpdate] = useState(true)
   
   useEffect(() => {
     fetch(`/all_squares/${currentGarden.id}`)
@@ -12,7 +13,7 @@ function Schedule({currentGarden, refresh}) {
       let filteredSquares = squares.filter(square => square.crop_id !== 1)
       setCropSquares(filteredSquares)
       })
-  }, [refresh])
+  }, [refresh, scheduleUpdate])
 
   let cropMap = {}
   //creates crop map with name of crop and number of times that crop appears in squares, stores in cropMap
@@ -30,22 +31,26 @@ function Schedule({currentGarden, refresh}) {
   const numberOfCrops = Object.values(cropMap)
 
   //function that renders each row of the schedule table
+ 
   const renderCrops = crops.map(crop => {
     const date = cropSquares.find(square => square.crop.name === crop).start_date.slice(0, 10)
 
     const dtm = cropSquares.find(square => square.crop.name === crop).crop.days_to_maturity
 
-    const harvestDate = (date, dtm) => {
-      return moment(date, "YYYY-MM-DD").add('days', dtm).format("MM/DD/YYYY");
+    const harvestDate = (dtm, date) => {
+      return moment(date, "YYYY-MM-DD").add(dtm, 'days').format("MM/DD/YYYY");
     } 
 
-    let harvest = harvestDate(date, dtm)
+    let harvest = harvestDate(dtm, date)
+
+    // Deprecation warning: moment().add(period, number) is deprecated. Please use moment().add(number, period).
 
     const cropSquareId = cropSquares.find(square => square.crop.name === crop).id
+
+    
   
 
     const handleOnChange = (e) => {
-      console.log(e.target.value)
       fetch(`/garden_squares/${cropSquareId}`, {
         method: "PATCH",
         headers: {
@@ -55,12 +60,12 @@ function Schedule({currentGarden, refresh}) {
       })
       .then(r => r.json())
       .then(data => {
-        harvest = harvestDate(data.start_date, dtm)
+        setScheduleUpdate(scheduleUpdate => !scheduleUpdate)
       })
     }
 
     return (
-      <tr>
+      <tr key={crops.indexOf(crop)}>
         <td>{crop}</td>
         <td>{numberOfCrops[crops.indexOf(crop)]} sq.ft</td>
         <td><input onChange={handleOnChange} type="text" placeholder={date} onFocus={(e) => e.target.type='date'} onBlur={(e) => e.target.type='text'} /></td>
@@ -69,6 +74,7 @@ function Schedule({currentGarden, refresh}) {
       </tr>
     )
   })
+
   
 
 

@@ -11,10 +11,11 @@ function Crops() {
   useEffect(() => {
     fetch('/crops')
     .then(r => r.json())
-    .then(data => setCrops(data))
+    .then(data => {
+      setCrops(data)
+    })
   }, [])
 
-  // console.log(escarole)
   // let cropImages = [escarole]
 
 
@@ -24,7 +25,6 @@ function Crops() {
   
 
   const plantFamilies = []
-  console.log(crops)
 
   crops.forEach(crop => {
     if(!plantFamilies.includes(crop.family) && crop.family !== 'N/A'){
@@ -34,17 +34,16 @@ function Crops() {
 
   const renderTabs = plantFamilies.map(family => {
     let href = `#${family.toLowerCase()}`
-    return <li><a class="tab" href={href}>{family}</a></li>
+    return <li key={plantFamilies.indexOf(family)}><a class="tab" href={href}>{family}</a></li>
   })
 
   const renderPages = plantFamilies.map(family => {
     let id = `${family.toLowerCase()}`
     let cropsInFamily = crops.filter(crop => crop.family === family)
     let renderCropsInFamily = cropsInFamily.map(crop => {
-      console.log(crop.image)
       // let findCrop = cropImages.find(imageUrl => imageUrl.includes(crop.name.toLowerCase()))
       return (
-        <div className="crop-tile-container">
+        <div key={crop.id} className="crop-tile-container">
           <div className="card">
               <h2 className="card-title" >{crop.name}</h2>
               <img src={crop.url} style={{opacity: .8}}/>
@@ -94,9 +93,8 @@ function Crops() {
   //     <img src="https://images.unsplash.com/photo-1591485423007-765bde4139ef?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=80" alt="">
   //     <p class="card-desc">Pinnipeds, commonly known as seals,[a] are a widely distributed and diverse clade of carnivorous, fin-footed, semiaquatic marine mammals. They comprise the extant families Odobenidae (whose only living member is the walrus), Otariidae (the eared seals: sea lions and fur seals), and Phocidae (the earless seals, or true seals).</p>
   //  </div>
-    // console.log(renderCropsInFamily)
     return (
-      <div id={id} class="page">
+      <div key={plantFamilies.indexOf(family)} id={id} class="page">
         {renderCropsInFamily}
       </div>
     )
@@ -109,7 +107,6 @@ function Crops() {
     const observer = new IntersectionObserver((entries, observer) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
-          console.log(entry.target);
           const index = Array.from(pages).indexOf(entry.target)
           tabs.forEach(tab => {
             tab.classList.remove("activeTab")
@@ -123,6 +120,10 @@ function Crops() {
     pages.forEach(page => {
       observer.observe(page)
     })
+ 
+
+  
+    
 
   
 

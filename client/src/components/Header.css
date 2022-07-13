@@ -4,11 +4,19 @@
 @import url('https://fonts.googleapis.com/css2?family=BIZ+UDGothic&family=Cormorant+Garamond:wght@300&family=Cormorant+SC&display=swap');
 #create-garden-dropdown{
     display: flex;
+    height: 35vh;
     flex-direction: column;
     justify-content: center;
     text-align: center;
     font-family: 'Cormorant SC', serif;
+}
 
+#create-garden-dropdown h1{
+    font-size: 2.5vw;
+}
+
+#create-garden-dropdown h2{
+    font-size: 1.5vw;
 }
 
 #select-crop-dropdown{

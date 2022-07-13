@@ -15,14 +15,14 @@ function MyGardenItem({garden, setCurrentGarden, handleDelete}) {
     if(columns <= 5 && rows <= 5){
       // setHeight('52px')
       // setWidth('52px')
-      setHeight('50rem')
-      setWidth('50rem')
+      setHeight('50vh')
+      setWidth('50vh')
     } else if (columns <= 7 && rows <= 7){
-      setHeight('35rem') 
-      setWidth('35rem')
+      setHeight('35vh') 
+      setWidth('35vh')
     } else {
-      setHeight('25rem')
-      setWidth('25rem')
+      setHeight('25vh')
+      setWidth('25vh')
     }
 
   }, [garden])
