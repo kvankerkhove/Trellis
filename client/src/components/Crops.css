@@ -24,7 +24,7 @@
     width: 100%;
   }
   
-  ul {
+  #crops-ul {
     width: 100%;
     height: 5vw;
     /* margin-top: 5rem; */
@@ -189,7 +189,7 @@
   
   .card-desc {
     display: block;
-    font-size: 1.2rem;
+    font-size: 1.2vw;
     position: absolute;
     height: 0;
     top: 0;
@@ -203,7 +203,9 @@
   
   .card:hover .card-desc {
     opacity: 1;
-    height: 25rem;
+    height: 50vh;
+    font-family: 'Cormorant SC', serif;
+
   }
   
   /* h1 {

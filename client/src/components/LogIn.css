@@ -1,13 +1,15 @@
+@import url('https://fonts.googleapis.com/css2?family=Abel&family=BIZ+UDGothic&family=Cormorant+Garamond:wght@300&family=Cormorant+SC&display=swap');
+
 #login-page{
     height: 100vh;
     background-image: url("https://images.unsplash.com/photo-1621272156568-7306716648df?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80");
-    background-position: center;
+    background-position: bottom;
     background-size: cover;
     opacity: .75;
 }
 
 #login-padding{
-    padding: 4rem
+    padding: 8vh
 }
 
 #login-container{
@@ -15,13 +17,22 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    font-family: 'Cormorant SC', serif;
     text-align: center;
     background-color: white;
     opacity: .75;
-    width: 50%;
+    width: 30%;
     margin: auto;
     /* padding: 5rem; */
     margin-top: 5rem;
+}
+
+#login-container h1{
+    font-size: 2.5vw;
+}
+
+#login-container small{
+    font-size: 1.5vw;
 }
 
 

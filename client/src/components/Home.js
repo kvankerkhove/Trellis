@@ -149,11 +149,16 @@ function Home({isLoggedIn}) {
         <h1 id="second-slogan">Grow fresh vegetables in your backyard</h1>
       </div>
       <div id="last-section">
+        <div id="last-section-left-side">
         <img ref={myPic3} className='chard' id='chard' src="https://images.unsplash.com/photo-1621459555843-9a77f1d03fae?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80" />
+        </div>
         <div id="second-paragraph">
             <h2>What this app offers:</h2>
-            <p>At Trellis, we believe in making the most out of your space, thats why we've created an app where you can optimize the amount of food you can grow in your garden</p>
-            <p>ldfsjlkfdjsl jfowjeow jdoiwj efJDfiow dks JFoewj dsklf FSe ogjoemdlsjfo jfjncdkjoe jcdfjocwjckld  jf jeoiwjdjfs mfkl ipofew i jfpr cnlkp fksdlj dji e jfoe jfd</p>
+            <ul id="app-offers">
+              <li>A full crops list with information on each vegetable including watering and growing information</li>
+              <li>A customizable garden grid to design a garden that's perfect for you. </li>
+              <li>Each garden you create displays information about the garden including number of seeds you'll need to buy, the projected yield of each crop, and a sowing and harvest schedule</li>
+            </ul>
           </div>
         <div id="last-section-right-side">
           <img  ref={myPic4} className='harvest-basket' id='harvest-basket' src='https://images.unsplash.com/photo-1624668430039-0175a0fbf006?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80' />

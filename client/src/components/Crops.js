@@ -132,7 +132,7 @@ function Crops() {
   return (
     <div>
       <nav className="navbar">
-      <ul>
+      <ul id="crops-ul">
         {/* <li><a class="tab" href="#home">Asters</a></li>
         <li><a class="tab" href="#services">Brassicas</a></li>
         <li><a class="tab" href="#about">Nightshades</a></li>

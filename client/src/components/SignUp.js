@@ -55,6 +55,8 @@ function SignUp({handleUserLogin}) {
     <div id="signup-page">
       <div id="signup-padding">
         <div id="signup-container">
+          <h1>Sign up to start growing</h1>
+          <br></br>
           <form onSubmit={handleSignup} id="signup-form">
             <div>
               <label htmlFor="inputFirstName">First Name</label>
@@ -93,10 +95,9 @@ function SignUp({handleUserLogin}) {
                     {createZones()}
                   </select>
                 </div>
+                <small id="hardiness-zone">Don't know your hardiness zone? Check <a href="https://planthardiness.ars.usda.gov/" target="_blank" rel="noreferrer noopener">here</a></small>
               </div>
-
               <br></br>
-
               <div>
                 <label htmlFor="inputUsername">Username</label>
                 <div>
@@ -143,6 +144,7 @@ function SignUp({handleUserLogin}) {
               <br></br>
               <button type="submit" class="btn btn-outline-primary">Sign Up</button>
               { errors !== [] ? <Errors errors={errors}/> : null }
+              <br></br>
               <div>
                   <p>Click <a href="/login">here</a> to return to Login</p>
               </div>

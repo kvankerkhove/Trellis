@@ -24,7 +24,7 @@
 .tile-card{
     display: flex;
     flex-direction: column;
-    height: 60vh;
+    height: 50vh;
     width: 25vw;
     /* background-color: #efdecd; */
     background-image: linear-gradient(to bottom right, #D3F2DF, white, #D3F2DF);
