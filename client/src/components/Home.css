@@ -42,7 +42,7 @@
 }
 
 #middle-section{
-    height: 85vh;
+    height: 100vh;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -191,6 +191,7 @@
     display: block;
     margin-left: auto;
     margin-right: auto;
+    margin-top: 6vh
 }
 
 .tomato-hands-pic,

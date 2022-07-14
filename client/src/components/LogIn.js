@@ -25,7 +25,7 @@ function LogIn({handleUserLogin}) {
     <div id="login-page">
       <div id="login-padding">
         <div id="login-container">
-          <h1>Welcome Back.</h1>
+          <h1>Welcome back.</h1>
           <small>Sign in to get growing.</small>
           <br></br>
           <form id='login-form' onSubmit={handleLogin}>
@@ -46,7 +46,7 @@ function LogIn({handleUserLogin}) {
                 </div>
                 <br></br>
                 <div>
-                  <button type="submit">Login</button>
+                  <button type="submit">login</button>
                 </div>
                 { errors !== [] ? <Errors errors={errors}/> : null }
                 <div>
@@ -56,7 +56,7 @@ function LogIn({handleUserLogin}) {
                   </div>
                 </div>
                 <div>
-                  <p>Don't have account? <a href="/signup" id="signup">Sign up here</a></p>
+                  <p>don't have account? <a href="/signup" id="signup">sign up</a></p>
                 </div>
             </div>
           </form>

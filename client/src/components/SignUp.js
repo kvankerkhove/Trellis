@@ -59,7 +59,7 @@ function SignUp({handleUserLogin}) {
           <br></br>
           <form onSubmit={handleSignup} id="signup-form">
             <div>
-              <label htmlFor="inputFirstName">First Name</label>
+              <label htmlFor="inputFirstName">First Name<small style={{color: 'red'}}>*</small></label>
               <div>
                   <input
                   type="text"
@@ -73,7 +73,7 @@ function SignUp({handleUserLogin}) {
               <br></br>
                 
               <div>
-                <label htmlFor="inputLastName">Last Name</label>
+                <label htmlFor="inputLastName">Last Name<small style={{color: 'red'}}>*</small></label>
                 <div>
                     <input
                     type="text"
@@ -99,7 +99,7 @@ function SignUp({handleUserLogin}) {
               </div>
               <br></br>
               <div>
-                <label htmlFor="inputUsername">Username</label>
+                <label htmlFor="inputUsername">Username<small style={{color: 'red'}}>*</small></label>
                 <div>
                     <input
                     type="text"
@@ -114,7 +114,7 @@ function SignUp({handleUserLogin}) {
               <br></br>
 
               <div>
-                <label htmlFor="inputPassword">Password</label>
+                <label htmlFor="inputPassword">Password<small style={{color: 'red'}}>*</small></label>
                 <div>
                     <input
                     type="password"
@@ -129,7 +129,7 @@ function SignUp({handleUserLogin}) {
               <br></br>
 
               <div>
-                <label htmlFor="inputPassword">Confirm Password</label>
+                <label htmlFor="inputPassword">Confirm Password<small style={{color: 'red'}}>*</small></label>
                 <div>
                     <input
                     type="password"

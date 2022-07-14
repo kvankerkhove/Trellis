@@ -1,11 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Abel&family=BIZ+UDGothic&family=Cormorant+Garamond:wght@300&family=Cormorant+SC&display=swap');
 
 #signup-page{
-    height: 100vh;
+    height: 100%;
     background-image: url("https://images.unsplash.com/photo-1621272156568-7306716648df?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80");
     background-position: bottom;
     background-size: cover;
-    opacity: .75;
 }
 
 #signup-padding{
@@ -20,7 +19,7 @@
     text-align: center;
     background-color: white;
     font-family: 'Cormorant SC', serif;
-    opacity: .75;
+    opacity: .9;
     width: 30%;
     margin: auto;
     /* padding: 5rem; */
@@ -29,10 +28,12 @@
 
 #signup-container h1{
     font-size: 2vw;
+    color: #407055;
+
 }
 
 #signup-container label{
-    font-size: 1vw;
+    font-size: 1.25vw;
 }
 
 #signup-container input{
@@ -42,5 +43,5 @@
 }
 
 #hardiness-zone{
-    font-size: .75vw;
+    font-size: 1vw;
 }

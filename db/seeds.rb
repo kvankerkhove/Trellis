@@ -253,6 +253,86 @@ basil = Crop.create({
     url: "https://images.unsplash.com/photo-1629157247277-48f870757026?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80"
 })
 
+celery = Crop.create({
+    name: "Celery",
+    family: "Umbel",
+    plants_per_sq_ft: 2,
+    days_to_maturity: 80,
+    projected_yield: 2,
+    yield_unit: "pc",
+    watering_needs: "It needs between 1 and 1.5 inches of water per week. If celery doesn't get the moisture it needs, it'll shrivel and get extra stringy.",
+    details: "Sow in early March or 10–12 weeks before transplanting outdoors. Sow 2 seeds per plug. Keep soil moist and temperatures 70–75°F (21–24°C) if possible. Seedlings emerge in 2–3 weeks. Transplant when there are 2 leaves present",
+    image: "celery.png",
+    url: "https://www.seeds-gallery.shop/6579-large_default/15000-seeds-celery-utah-finest.jpg"
+})
+
+leek = Crop.create({
+    name: "Leek",
+    family: "Allium",
+    plants_per_sq_ft: 5,
+    days_to_maturity: 75,
+    projected_yield: 5,
+    yield_unit: 'pc',
+    watering_needs: "One inch of rainfall per week is enough. An inch of water will wet a sandy soil to a depth of ten inches, a heavy clay soil to six inches. If your soil is sandy, it is better to water more often than once a week. To much water could cause the root to rot",
+    details: "Sow in flats in Feb.-March, 1/4in apart, 1/4in deep or start in plug flats, thinning to one plant per cell. Beginning in late spring, when approx. 8in tall and pencil-thick, transplant outdoors 6 in apart in holes dibbled about 6in deep. Only 2-3in of leaves need to extend above the soil surface. Do not firm soil - allow irrigation or rain to fill in the dibble hole.",
+    image: "leek.png",
+    url: "https://www.ruralsprout.com/wp-content/uploads/2021/01/grow-leeks.jpg"
+})
+
+onion = Crop.create({
+    name: "Onion",
+    family: "Allium",
+    plants_per_sq_ft: 4,
+    days_to_maturity: 105,
+    projected_yield: 4,
+    yield_unit: "pc",
+    watering_needs: "Ideal onion water needs are to irrigate to a depth of an inch (2.5 cm.) once a week rather than a light sprinkling each day. If you are watering onions with a hose or sprinkler, water in the morning rather than during the heat of the day, which will just end up being evaporated. Overhead watering can spell trouble",
+    details: "For direct seeding: in April or early May, or as soon as the soil can be prepared in early spring, sow in about 2 seeds/in, 1/4- 1/2in deep, 6in apart. Plant 8in apart for larger onions.",
+    image: "onion.png",
+    url: "https://cdn.harvesttotable.com/htt/2012/11/23185507/Onion-bulbs1.jpg"
+})
+
+sunflower = Crop.create({
+    name: "Sunflower",
+    family: "Aster",
+    plants_per_sq_ft: 1,
+    days_to_maturity: 90,
+    projected_yield: 10,
+    yield_unit: "stems",
+    watering_needs: "Although sunflowers require a lot of water to germinate, they only require an inch of water per week during the growing season. Use a watering nozzle to easily water once a week until the top 6 inches of soil is moist.",
+    details: "Sow 2 seeds at the middle of each square foot after the last frost. Direct Seeding is preferred to avoid root disturbance",
+    image: "sunflower.png",
+    url: "https://images.unsplash.com/photo-1455659817273-f96807779a8a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80"
+})
+
+zucchini = Crop.create({
+    name: "Zucchini",
+    family: "Curcubit",
+    plants_per_sq_ft: 1,
+    days_to_maturity: 48,
+    projected_yield: 5,
+    yield_unit: "lbs",
+    watering_needs: "Summer squash need one inch of water per week. To put that into perspective, you'll need to water mature plants once a week so the soil is moist 8 to 12 inches beneath the surface. Water at the base of the plants",
+    details: "If possible, start indoors 2 weeks before transplanting outside. Transplant once there are two leaves per plant. Transplant 1 per square ft, being careful with the roots as they are sensitive.",
+    image: "zucchini.png",
+    url: "https://gardenerspath.com/wp-content/uploads/2020/06/Golden-Zucchini-Plant-Growing-in-the-Garden.jpg"
+})
+
+perilla = Crop.create({
+    name: "Perilla",
+    family: "Herbs",
+    plants_per_sq_ft: 4,
+    days_to_maturity: 80,
+    projected_yield: 30,
+    yield_unit: "pc",
+    watering_needs: "Perilla must be watered regularly. It needs approximately one inch of water per week. This doesn't all need to come from you. If you have a way to measure the amount of rain you get each week, you'll only need to supplement what doesn't come from nature.",
+    details: "Store seed in the freezer for best germination. Sow in spring after the last frost, 1-2 seeds per section. Sow seeds shallowly or cover lightly, as light is required for germination. Can grow somewhat thickly, or thin to 6-12in apart.",
+    image: "perilla.png",
+    url: "https://cdn.shopify.com/s/files/1/0549/4476/0049/products/il_fullxfull.2651724111_idu6_1400x.jpg?v=1632835729"
+})
+
+
+
 katey = User.create({
     first_name: 'Katey',
     last_name: 'Van',
