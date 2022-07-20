@@ -8,7 +8,7 @@ function LogIn({handleUserLogin}) {
   const handleLogin = async (e) => {
     e.preventDefault()
     let form = new FormData(document.querySelector("#login-form"))
-    let req = await fetch("/login", {
+    let req = await fetch("/api/login", {
       method: "POST",
       body: form,
     })

@@ -21,7 +21,7 @@ function App() {
 
   useEffect(() => {
     const validateUser = async () => {
-      let req = await fetch("/current_user");
+      let req = await fetch("/api/current_user");
       if (req.ok) {
         setUser(await req.json())
         setIsLoggedIn(true)
@@ -40,7 +40,7 @@ function App() {
   //on every refresh, validateGarden checks if there is a current_garden stored in a session
   useEffect(() => {
     const validateGarden = async () => {
-      let req = await fetch("/current_garden");
+      let req = await fetch("/api/current_garden");
       if (req.ok) {
         setCurrentGarden(await req.json())
       } 
@@ -50,7 +50,7 @@ function App() {
 
 
   useEffect(() => {
-    fetch('/crops')
+    fetch('/api/crops')
     .then(r => r.json())
     .then(crops => setCrops(crops))
   }, [])

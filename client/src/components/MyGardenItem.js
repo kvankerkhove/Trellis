@@ -30,7 +30,7 @@ function MyGardenItem({garden, setCurrentGarden, handleDelete}) {
 
   //When edit button is clicked, sets session to clicked garden's id on backend
   const handleEditClick = (e) => {
-    fetch("/assign_garden", {
+    fetch("/api/assign_garden", {
       method: "POST",
       headers: {
         "Content-Type": "application/json"
@@ -45,7 +45,7 @@ function MyGardenItem({garden, setCurrentGarden, handleDelete}) {
   }
 
   const handleDeleteGarden = (e) => {
-    fetch(`/gardens/${garden.id}`, {
+    fetch(`/api/gardens/${garden.id}`, {
       method: "DELETE"
     })
     .then(r => r.json())

@@ -46,7 +46,7 @@ function CreateGarden({crops, user, currentGarden, setCurrentGarden}) {
         garden_id: gardenId,
         crop_id: 1
       }
-      fetch(`/all_squares/${gardenId}`, {
+      fetch(`/api/all_squares/${gardenId}`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json"
@@ -59,7 +59,7 @@ function CreateGarden({crops, user, currentGarden, setCurrentGarden}) {
 
   //Removes current_garden session and directs to create garden form
   const handleRefresh = () => {
-    fetch("/remove", { method: "DELETE" }).then((r) => {
+    fetch("/api/remove", { method: "DELETE" }).then((r) => {
       if (r.ok) {
         setShowCropData(false)
         setCurrentGarden(null)

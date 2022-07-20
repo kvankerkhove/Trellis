@@ -19,7 +19,7 @@ function GardenGrid({selectedCrop, currentGarden, height, width}) {
   }, [currentGarden])
 
   useEffect(() => {
-    fetch(`/all_squares/${currentGarden.id}`)
+    fetch(`/api/all_squares/${currentGarden.id}`)
     .then(r => r.json())
     .then(garden_squares => setCurrentGardenSquares(garden_squares))
   }, [rows])
@@ -38,7 +38,7 @@ function GardenGrid({selectedCrop, currentGarden, height, width}) {
       crop_id: crop.id
     }
 
-    fetch(`/garden_squares/${squareId}`, {
+    fetch(`/api/garden_squares/${squareId}`, {
       method: "PATCH",
       headers: {
         "Content-Type": "application/json"

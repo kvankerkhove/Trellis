@@ -14,7 +14,7 @@ function MyGardens({user, setCurrentGarden}) {
   // }, [])
   useEffect(() => {
 
-    fetch(`/all_gardens/${user.id}`)
+    fetch(`/api/all_gardens/${user.id}`)
     .then(r => r.json())
     .then(data => setMyGardens(data))
   }, [])

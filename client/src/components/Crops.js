@@ -9,7 +9,7 @@ function Crops() {
   const [crops, setCrops] = useState([])
 
   useEffect(() => {
-    fetch('/crops')
+    fetch('/api/crops')
     .then(r => r.json())
     .then(data => {
       setCrops(data)

@@ -7,7 +7,7 @@ function Schedule({currentGarden, refresh}) {
   const [scheduleUpdate, setScheduleUpdate] = useState(true)
   
   useEffect(() => {
-    fetch(`/all_squares/${currentGarden.id}`)
+    fetch(`/api/all_squares/${currentGarden.id}`)
     .then(r => r.json())
     .then(squares => {
       let filteredSquares = squares.filter(square => square.crop_id !== 1)
@@ -51,7 +51,7 @@ function Schedule({currentGarden, refresh}) {
   
 
     const handleOnChange = (e) => {
-      fetch(`/garden_squares/${cropSquareId}`, {
+      fetch(`/api/garden_squares/${cropSquareId}`, {
         method: "PATCH",
         headers: {
           "Content-Type": "application/json"

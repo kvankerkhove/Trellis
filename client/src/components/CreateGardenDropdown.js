@@ -12,7 +12,7 @@ function CreateGardenDropdown({user, handleCurrentGarden}) {
         e.preventDefault()
         let form = new FormData(document.querySelector("#create-garden-form"))
         form.append('user_id', user_id);
-        let req = await fetch("/create_garden", {
+        let req = await fetch("/api/create_garden", {
           method: "POST",
           body: form,
         })

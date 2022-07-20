@@ -1,0 +1,40 @@
+{
+  "files": {
+    "main.css": "/static/css/main.84ef61c4.css",
+    "main.js": "/static/js/main.f9cb17f0.js",
+    "static/js/787.c4e7f8f9.chunk.js": "/static/js/787.c4e7f8f9.chunk.js",
+    "static/media/carrot.png": "/static/media/carrot.1d436bccb6f3513f5643.png",
+    "static/media/radish.png": "/static/media/radish.6b6ede54f637a5766d0d.png",
+    "static/media/cabbage.png": "/static/media/cabbage.6e248599c055e18ff2a3.png",
+    "static/media/cilantro.png": "/static/media/cilantro.9dcb1cab4e5156b8d0db.png",
+    "static/media/kale.png": "/static/media/kale.f56c5e4f12fef08e0a17.png",
+    "static/media/parsley.png": "/static/media/parsley.34144828067bfadbc935.png",
+    "static/media/sunflower.png": "/static/media/sunflower.d889cc046473cfd01bb0.png",
+    "static/media/cucumber.png": "/static/media/cucumber.bce3285d2c86665c91e2.png",
+    "static/media/spinach.png": "/static/media/spinach.3d729566e3ad1cf478b8.png",
+    "static/media/fennel.png": "/static/media/fennel.47cc01cea598c797d285.png",
+    "static/media/scallions.png": "/static/media/scallions.e1a551f0b910e7b3032c.png",
+    "static/media/tomato.png": "/static/media/tomato.b2ac27aa8676fcd52544.png",
+    "static/media/leek.png": "/static/media/leek.18f6072e209db56f7ac4.png",
+    "static/media/basil.png": "/static/media/basil.f45a58afcc8f905f3cf1.png",
+    "static/media/beet.png": "/static/media/beet.d7f75f6789802bb3149c.png",
+    "static/media/zucchini.png": "/static/media/zucchini.d99b301d7b8cd6a7c4b6.png",
+    "static/media/lettuce.png": "/static/media/lettuce.77ab8862a594b1828b99.png",
+    "static/media/onion.png": "/static/media/onion.f6baaa05ea3ab8014296.png",
+    "static/media/perilla.png": "/static/media/perilla.7c56174e4712b7800f0c.png",
+    "static/media/eggplant.png": "/static/media/eggplant.7b1a6905ed88f2d38c26.png",
+    "static/media/chard.png": "/static/media/chard.9839e0679e98a3d9264c.png",
+    "static/media/escarole.png": "/static/media/escarole.263723c8e1782773b067.png",
+    "static/media/celery.png": "/static/media/celery.f2b6015c491347b4aa9b.png",
+    "static/media/pepper.png": "/static/media/pepper.8469b5c8c1508d45e631.png",
+    "static/media/logo.png": "/static/media/logo.e9d987a866f58b5fd62c.png",
+    "index.html": "/index.html",
+    "main.84ef61c4.css.map": "/static/css/main.84ef61c4.css.map",
+    "main.f9cb17f0.js.map": "/static/js/main.f9cb17f0.js.map",
+    "787.c4e7f8f9.chunk.js.map": "/static/js/787.c4e7f8f9.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.84ef61c4.css",
+    "static/js/main.f9cb17f0.js"
+  ]
+}

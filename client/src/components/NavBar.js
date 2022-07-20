@@ -5,7 +5,7 @@ import logo from '../images/logo.png'
 
 function NavBar({isLoggedIn, handleLogout}) {
   function handleLogoutClick() {
-    fetch("/logout", { method: "DELETE" }).then((r) => {
+    fetch("/api/logout", { method: "DELETE" }).then((r) => {
       if (r.ok) {
         // setIsLoggedIn(false)
         // setUser(null);

@@ -11,7 +11,7 @@ function GardenData({currentGarden}) {
 
   
   useEffect(() => {
-    fetch(`/garden_data/${currentGarden.id}`)
+    fetch(`/api/garden_data/${currentGarden.id}`)
     .then(r => r.json())
     .then(data => setCurrentGardenSquares(data))
   },[currentGarden, refresh])
