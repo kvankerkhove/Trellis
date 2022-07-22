@@ -7,7 +7,7 @@ Rails.application.routes.draw do
     resources :crops, only: [:index, :show, :create]
 
     # Defines the root path route ("/")
-    root "users#index"
+    # root "users#index"
     get "/all_gardens/:user_id", to: "gardens#all_gardens"
     get "/garden_data/:id", to: "garden_squares#garden_data"
     get "/all_squares/:id", to: "garden_squares#all_squares"
