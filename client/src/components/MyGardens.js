@@ -11,13 +11,15 @@ function MyGardens({user, setCurrentGarden}) {
   //   fetch('/current_user')
   //   .then(r => r.json())
   //   .then(user => setGardenUser(user))
-  // }, [])
+  
+  
   useEffect(() => {
-
-    fetch(`/api/all_gardens/${user.id}`)
-    .then(r => r.json())
-    .then(data => setMyGardens(data))
-  }, [])
+    if (user) {
+      fetch(`/api/all_gardens/${user.id}`)
+      .then(r => r.json())
+      .then(data => setMyGardens(data))
+    }
+  }, [user])
 
 
   // console.log(`garden user: ${gardenUser}`)

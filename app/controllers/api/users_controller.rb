@@ -4,13 +4,15 @@ class Api::UsersController < ApplicationController
     end
 
     def show
-        current_user = User.find(session[:current_user])
+        # debugger
         # puts "User ID:#{session[:current_user]}"
         render json: current_user
     end
 
     def create
         user = User.create!(user_params)
+        ##User.new
+        ##User.save
         if user.valid?
             session[:current_user] = user.id
             render json: user, status: 201

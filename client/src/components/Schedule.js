@@ -5,6 +5,7 @@ import moment from 'moment'
 function Schedule({currentGarden, refresh}) {
   const [cropSquares, setCropSquares] = useState([])
   const [scheduleUpdate, setScheduleUpdate] = useState(true)
+
   
   useEffect(() => {
     fetch(`/api/all_squares/${currentGarden.id}`)

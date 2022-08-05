@@ -68,7 +68,7 @@ function App() {
     history.push('/login')
   }
 
-  
+  console.log(user)
 
   return (
     <div className="App">
