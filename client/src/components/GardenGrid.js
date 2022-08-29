@@ -1,11 +1,17 @@
 import React, { useState, useEffect } from 'react'
 import GardenTile from './GardenTile'
 import './GardenGrid.css'
+import moment from 'moment'
+
 
 function GardenGrid({selectedCrop, currentGarden, height, width}) {
   const [rows, setRows] = useState(8)
   const [columns, setColumns] = useState(8)
   const [currentGardenSquares, setCurrentGardenSquares] = useState([])
+
+  console.log(moment().format('YYYY-MM-DD'))
+
+
   
 
 
@@ -35,7 +41,8 @@ function GardenGrid({selectedCrop, currentGarden, height, width}) {
   const handleGardenSquare = (squareId, crop) => {
 
     const updateCropObj = {
-      crop_id: crop.id
+      crop_id: crop.id,
+      start_date: moment().format('YYYY-MM-DD')
     }
 
     fetch(`/api/garden_squares/${squareId}`, {

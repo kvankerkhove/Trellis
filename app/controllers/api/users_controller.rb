@@ -4,8 +4,6 @@ class Api::UsersController < ApplicationController
     end
 
     def show
-        # debugger
-        # puts "User ID:#{session[:current_user]}"
         render json: current_user
     end
 

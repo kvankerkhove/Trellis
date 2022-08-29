@@ -5,4 +5,5 @@ class Crop < ApplicationRecord
     def self.alphabetized
         Crop.all.order(:name)
     end
+    
 end

@@ -3,15 +3,6 @@ class Api::GardensController < ApplicationController
         render json: Garden.all
     end
 
-    # def show
-    #     render json: find_garden
-    # end
-
-    # def create
-    #     garden = Garden.create!(garden_params)
-    #     render json: garden, status: :created
-    # end
-
     def show
         current_garden = Garden.find(session[:current_garden])
         render json: current_garden
@@ -48,4 +39,4 @@ class Api::GardensController < ApplicationController
     end
 end
 
-# puts "User ID:#{session[:current_user]}"
+

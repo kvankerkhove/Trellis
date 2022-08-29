@@ -10,8 +10,13 @@ function GardenTile({id, selectedCrop, handleGardenSquare, square, height, width
     handleGardenSquare(square.id, selectedCrop)
   }
 
+  const handleRightClick = (e) => {
+    console.log(e.target)
+    console.log(square)
+  }
+
   return (
-      <div onClick={handleClick} class='garden-tile' id={id} style={{height:{height}, width:{width}}} >
+      <div onClick={handleClick} onContextMenu={handleRightClick} class='garden-tile' id={id} style={{height:{height}, width:{width}}} >
         <img id="garden-tile-image" src={ require(`../images/${square.crop.image}`)} alt={square.crop.name} height={height}  width={width}/>
       </div>
   )
