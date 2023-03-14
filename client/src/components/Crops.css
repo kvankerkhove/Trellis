@@ -27,7 +27,6 @@
   #crops-ul {
     width: 100%;
     height: 5vw;
-    /* margin-top: 5rem; */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -52,29 +51,21 @@
   .tab{
     font-family: 'Cormorant SC', serif;
     font-size: 1.5vw;
-
   }
   
   .page {
     width: 100%;
     height: 100vh;
     display: flex;
-    /* justify-content: center; */
-    /* align-items: center; */
-    /* font-size: xx-large; */
   }
   
   .page:nth-child(even){
     background-color: #D3F2DF;
-
-
   }
 
   .page:nth-child(odd){
     background-color: white;
-
   }
-
 
   .crop-tile-container{
       display: flex;
@@ -82,56 +73,10 @@
       justify-content: center;
       align-items: center;
       width: 100%;
-
-      /* margin: auto; */
-      /* overflow: scroll;
-      overflow-y: hidden;
-      width: 66%;
-      height: 100vh;
-      margin: auto;
-      padding: 100px; */
-      /* margin-top: 25%; */
-
-      /* text-align: center; */
-      /* margin-top: 5%;
-      margin-bottom: 5%; */
   }
 
-  /* .crop-tile{ */
-      /* display: flex;
-      flex-direction: column;
-      width: 20rem;
-      height: 25rem; */
-      /* border: 1px solid black; */
-      /* border: 5px solid #407055;
-
-      box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.5); 
-      overflow: scroll; */
-      /* transition: 450ms transform;
-      font-size: 0;
-      white-space: nowrap;
-      margin: 70.3125px 0;
-      padding-bottom: 10px; */
-  
-
-  /* .top-of-crop-tile{
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    background-color: #407055;
-  } */
-
-  /* .crop-name{
-    font-family: 'Cormorant SC', serif;
-    margin-left: 1rem;
-  } */
-
   .card {
-    /* margin: 40px; */
     position: relative;
-    /* max-width: 250px;
-    max-height: 350px; */
     box-shadow: 0 40px 60px -6px black;
     width: 75%;
     height: 50vh;
@@ -153,10 +98,7 @@
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    /* margin-left: 1rem;
-    margin-right: 1rem; */
     font-family: 'Abel', sans-serif;
-    /* width: 15rem; */
   }
 
   .icon{
@@ -205,15 +147,7 @@
     opacity: 1;
     height: 50vh;
     font-family: 'Cormorant SC', serif;
-
   }
-  
-  /* h1 {
-    font-size: 2.8rem;
-    color: #fff;
-    margin: 40px 0 20px 0;
-    text-align: center;
-  } */
   
 
 

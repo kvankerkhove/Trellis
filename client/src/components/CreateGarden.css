@@ -1,5 +1,12 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto:300');
 
+#create-garden-page{
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+/* top and bottom carrot picture */
 #create-garden-top-picture {
   text-align: end;
   background:linear-gradient(141deg, #ccc 25%, #eee 40%, #ddd 55%);
@@ -11,14 +18,38 @@
   font-family:'Roboto';
   font-weight:300;
   font-size:32px;
-  /* padding-top:40vh; */
   height:32vh;
   overflow:hidden;
-  -webkit-backface-visibility: hidden;
-  -webkit-perspective: 1000;
-  -webkit-transform: translate3d(0,0,0);
 }
 
+#create-garden-bottom-picture{
+  height: 30vh;
+  background-image: url("https://images.unsplash.com/photo-1654578513390-3efb00ded111?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1742&q=80");
+  background-position: bottom center;
+  background-size: cover;
+  padding: 1rem;
+  opacity: .9;
+}
+
+#create-new-garden-btn{
+  align-self: center;
+  padding: .5rem;
+  margin: 2rem 1rem;
+  transition-duration: 0.4s;
+  cursor: pointer;
+  background-color: white; 
+  color: #009879; 
+  border: 2px solid #009879;
+  border-radius: 5px;
+}
+
+#create-new-garden-btn:hover {
+background-color: #009879;
+box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+color: white;
+}
+
+/* 'grow something beautiful' animation */
 .create {
   display:inline-block;
   overflow:hidden;
@@ -26,10 +57,7 @@
   margin-right: .5rem;
 }
 
-.create:first-of-type {    /* For increasing performance 
-                       ID/Class should've been used. 
-                       For a small demo 
-                       it's okaish for now */
+.create:first-of-type {    
   animation: showup 7s infinite;
 }
 
@@ -63,75 +91,4 @@
     30% {width:17.5rem;}
     80% {opacity:1;}
     100% {opacity:0;width:17.5rem;}
-}
-
-
-#create-garden-page{
-    height: 100%;
-    /* margin-bottom: 0px; */
-    display: flex;
-    flex-direction: column;
-    /* background-color: black; */
-}
-
-#create-new-garden-btn{
-    align-self: center;
-    padding: .5rem;
-    margin: 2rem 1rem;
-    transition-duration: 0.4s;
-    cursor: pointer;
-    background-color: white; 
-    color: #009879; 
-    border: 2px solid #009879;
-    border-radius: 5px;
-}
-  
-#create-new-garden-btn:hover {
-background-color: #009879;
-box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
-color: white;
-}
-
-
-/* #create-garden-top-picture{
-    height: 15rem;
-
-
-    background-image: url("https://images.unsplash.com/photo-1654578513390-3efb00ded111?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1742&q=80");
-    background-position: center;
-    background-size: cover
-} */
-
-#saying{
-    margin: 0;
-    text-align: end;
-    margin-right: 10px;
-    color: white;
-}
-
-#create-garden-bottom-picture{
-    /* height: 200px; */
-    /* height: 15rem; */
-    height: 30vh;
-
-    background-image: url("https://images.unsplash.com/photo-1654578513390-3efb00ded111?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1742&q=80");
-    background-position: bottom center;
-    background-size: cover;
-    /* display: flex;
-    justify-content: center;
-    align-items: center; */
-    /* margin: auto; */
-    /* position: absolute; */
-    /* bottom: 0;
-    margin-top: 0%;
-    margin-bottom: -20px; */
-    padding: 1rem;
-    opacity: .9;
-}
-
-#button{
-    /* margin: 0; */
-    text-align: center;
-    /* margin-right: 10px; */
-    /* color: white; */
 }

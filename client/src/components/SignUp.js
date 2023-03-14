@@ -24,7 +24,7 @@ function SignUp({handleUserLogin}) {
     }
   }
 
-
+  //generates and renders 26 hardiness zones, prevents repetition
   const createZones = () => {
     let hardinessZones = []
     for( let i = 1; i <= 13; i++ ){
@@ -48,18 +48,15 @@ function SignUp({handleUserLogin}) {
     setPasswordConfirmation(input)
   }
 
-  console.log(password)
-  console.log(passwordConfirmation)
-
   return (
     <div id="signup-page">
       <div id="signup-padding">
         <div id="signup-container">
-          <h1>Sign up to start growing</h1>
+          <h1>sign up to start growing</h1>
           <br></br>
           <form onSubmit={handleSignup} id="signup-form">
             <div>
-              <label htmlFor="inputFirstName">First Name<small style={{color: 'red'}}>*</small></label>
+              <label htmlFor="inputFirstName">first name<small style={{color: 'red'}}>*</small></label>
               <div>
                   <input
                   type="text"
@@ -73,7 +70,7 @@ function SignUp({handleUserLogin}) {
               <br></br>
                 
               <div>
-                <label htmlFor="inputLastName">Last Name<small style={{color: 'red'}}>*</small></label>
+                <label htmlFor="inputLastName">last name<small style={{color: 'red'}}>*</small></label>
                 <div>
                     <input
                     type="text"
@@ -88,18 +85,18 @@ function SignUp({handleUserLogin}) {
               <br></br>
 
               <div>
-                <label htmlFor="inputLastName">Plant Hardiness Zone</label>
+                <label htmlFor="inputLastName">plant hardiness zone</label>
                 <div>
                   <select id="zone" name="plant_hardiness_zone">
                     <option>Choose Zone</option>
                     {createZones()}
                   </select>
                 </div>
-                <small id="hardiness-zone">Don't know your hardiness zone? Check <a href="https://planthardiness.ars.usda.gov/" target="_blank" rel="noreferrer noopener">here</a></small>
+                <small id="hardiness-zone">don't know your hardiness zone? check <a href="https://planthardiness.ars.usda.gov/" target="_blank" rel="noreferrer noopener">here</a></small>
               </div>
               <br></br>
               <div>
-                <label htmlFor="inputUsername">Username<small style={{color: 'red'}}>*</small></label>
+                <label htmlFor="inputUsername">username<small style={{color: 'red'}}>*</small></label>
                 <div>
                     <input
                     type="text"
@@ -114,7 +111,7 @@ function SignUp({handleUserLogin}) {
               <br></br>
 
               <div>
-                <label htmlFor="inputPassword">Password<small style={{color: 'red'}}>*</small></label>
+                <label htmlFor="inputPassword">password<small style={{color: 'red'}}>*</small></label>
                 <div>
                     <input
                     type="password"
@@ -129,7 +126,7 @@ function SignUp({handleUserLogin}) {
               <br></br>
 
               <div>
-                <label htmlFor="inputPassword">Confirm Password<small style={{color: 'red'}}>*</small></label>
+                <label htmlFor="inputPassword">confirm password<small style={{color: 'red'}}>*</small></label>
                 <div>
                     <input
                     type="password"
@@ -142,11 +139,11 @@ function SignUp({handleUserLogin}) {
                 </div>
               </div>
               <br></br>
-              <button type="submit" class="btn btn-outline-primary">Sign Up</button>
+              <button type="submit" class="btn btn-outline-primary">sign up</button>
               { errors !== [] ? <Errors errors={errors}/> : null }
               <br></br>
               <div>
-                  <p>Click <a href="/login">here</a> to return to Login</p>
+                  <p>click <a href="/login">here</a> to return to login</p>
               </div>
             </div>
           </form>

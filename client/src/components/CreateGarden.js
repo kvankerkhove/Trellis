@@ -18,13 +18,7 @@ function CreateGarden({crops, user, currentGarden, setCurrentGarden}) {
     "details": "n/a",
     "image": "fallow.png"
     })
-    // const [refresh, setRefresh] = useState(true)
-  const [showCropData, setShowCropData] = useState(false)
-  const [fetchingInProgress, setFetchingInProgress] = useState(false)
 
-  // if(!currentGarden) return null
-  // let height = '75px'
-  // let width = '75px'
   let todaysDate = moment().format('YYYY-MM-DD')
 
   let height = '75vh'
@@ -34,7 +28,7 @@ function CreateGarden({crops, user, currentGarden, setCurrentGarden}) {
     setSelectedCrop(selectedCrop)
   }
 
-
+  //after the create garden form is submitted, createGardenForm.js passes back that garden's data to this function that creates the squares for the respective garden's grid
   const handleCurrentGarden = (newGarden) => {
     setCurrentGarden(newGarden)
     let totalSquares = newGarden.rows * newGarden.columns
@@ -53,31 +47,17 @@ function CreateGarden({crops, user, currentGarden, setCurrentGarden}) {
         },
         body: JSON.stringify(squareData)
       })
-      
-  }
+    }
   }
 
-  //Removes current_garden session and directs to create garden form
+  //removes current_garden session and directs to create garden form when the 'save and create new garden' button is clicked
   const handleRefresh = () => {
     fetch("/api/remove", { method: "DELETE" }).then((r) => {
       if (r.ok) {
-        setShowCropData(false)
         setCurrentGarden(null)
       }
     });
   }
-
-
-  // setIsLoggedIn(false)
-        // setUser(null);
-        // history.push('/login')
-
-
-
-  const handleDataClick = () => {
-    setShowCropData((showCropData) => !showCropData)
-  }
-
 
   return (
     <div id="create-garden-page">
@@ -86,27 +66,14 @@ function CreateGarden({crops, user, currentGarden, setCurrentGarden}) {
         <div className="create">
           <span>something beautiful</span>
         </div>
-        {/* <h1 id="saying">create something beautiful</h1> */}
       </div>
       <Header crops={crops} handleSelectedCrop={handleSelectedCrop} selectedCrop={selectedCrop} user={user}  currentGarden={currentGarden} handleCurrentGarden={handleCurrentGarden}/>
-      
       {currentGarden ? <GardenGrid selectedCrop={selectedCrop} currentGarden={currentGarden} height={height} width={width}/> : null } 
-      
       {currentGarden ? <GardenData className="garden-data" currentGarden={currentGarden}/> : null }
       {currentGarden ? <button id="create-new-garden-btn" onClick={handleRefresh}>Save and Create New Garden</button> : null }
-
       <div id="create-garden-bottom-picture"></div>
-
-      {/* <br></br> */}
-      
     </div>
   )
 }
 
 export default CreateGarden
-
-
-// handleCurrentGarden={handleCurrentGarden}
-
-
-// {currentGarden ? <button id="button" onClick={handleDataClick}>{showCropData ? 'hide data' : 'show data'}</button>  : null}

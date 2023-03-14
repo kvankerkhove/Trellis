@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Abel&family=BIZ+UDGothic&family=Cormorant+Garamond:wght@300&family=Cormorant+SC&display=swap');
 
+/* first section on homepage */
 #home-page-top-picture{
     height: 100vh;
     background-image: url("https://images.unsplash.com/photo-1611843467160-25afb8df1074?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80");
@@ -10,22 +11,23 @@
     opacity: .9
 }
 
-#welcome{
-    text-align: left;
-    margin-left: 3rem;
-    color: #D3F2DF;
-}
-
 #first-slogan{
     margin-top: 22vh;
     font-size: 5vw;
-    /* color: #D3F2DF; */
     color: #D3F2DF;
-    /* -webkit-text-stroke: .0001rem #407055; */
     text-shadow: .05rem .05rem #407055 ;
     font-family: 'Cormorant SC', serif;
-
 }
+
+.first-slogan {
+    transform: scale(.5);
+    transition: transform 2s .2s cubic-bezier(0,.5,.75,1), filter 10s 2s ease-out;
+    will-change: transform;
+  }
+  
+.animate-first-slogan {
+    transform: translate(0, 75%) scale(1.25);
+  }
 
 #sign-in-button{
     margin-top: 6.5rem;
@@ -38,9 +40,9 @@
 #sign-in-button:hover{
     background-color: white;
     color: black
-
 }
 
+/* 'create your dream garden' section on home page */
 #middle-section{
     height: 100vh;
     display: flex;
@@ -57,40 +59,19 @@
 #first-half-middle-section{
     display: flex;
     flex-direction: column;
-    /* justify-content: space-between; */
     text-align: center;
     align-items: center;
     height: 75vh;
     margin-top: 10vh;
     margin-bottom: 10vh;
-
 }
-
-
-#tomato-trellis-pic{
-    height: 40vw;
-    /* opacity: .9; */
-}
-
-#tomato-hands-pic{
-    height: 20vw;
-    text-align: center;
-    margin-bottom: 4vh;
-    /* opacity: .9; */
-    
-}
-
-
 
 #first-paragraph {
-    /* margin-top: 2vh; */
-    /* margin-left: 5vh; */
     width: 40vw;
     text-align: center;
     font-family: 'Cormorant SC', serif;
     color: #407055;
     margin-bottom: 12vh;
-
 }
 
 #first-paragraph h2{
@@ -101,22 +82,34 @@
     font-size: 1.25vw;
 }
 
+#tomato-trellis-pic{
+    height: 40vw;
+    border-radius: 3vh;
+}
+
+#tomato-hands-pic{
+    height: 20vw;
+    text-align: center;
+    margin-bottom: 4vh;
+    border-radius: 3vh;
+}
+
+/* 'grow fresh vegetables in your backyard' section of home page */
 #middle-section-picture{
     height: 50vh;
     background-image: url("https://images.unsplash.com/photo-1601001815894-4bb6c81416d7?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80");
     background-size: cover;
     background-position: 50% 68%;
-    /* opacity: .9; */
 }
 
 #second-slogan{
     font-size: 8vh;
     color: #D3F2DF;
-    /* -webkit-text-stroke: .0001rem #407055; */
     text-shadow: .05rem .05rem #407055 ;
     font-family: 'Cormorant SC', serif;
 }
 
+/* 'what this app offers' section of home page */
 #last-section{
     height: 90vh;
     display: flex;
@@ -125,50 +118,31 @@
     align-items: center;
 
 }
-/* 
-#last-section-left-side{
-    width: 40vw;
-    height: 100vh;
-} */
 
 #last-section-right-side{
     width: 25vw;
     display: flex;
     flex-direction: column;
     margin-right: 5vw;
-    /* margin-top: 5rem; */
-
 }
 
-#chard{
+#chard-pic{
     width: 40vh;
     margin-left: 3vw;
-
-    /* height: 65vh; */
-    /* opacity: .9; */
-    
-
 }
 
-#harvest-basket{
+#harvest-basket-pic{
     width: 25vw;
     margin-bottom: 5vw;
-    /* opacity: .9; */
-   
-
+    border-radius: 3vh;
 }
 
-#potting-mix{
+#potting-mix-pic{
     width: 25vw;
-    /* margin-right: 5vw; */
-    
-    /* opacity: .9; */
-
 }
 
 #second-paragraph {
     width: 25vw;
-    /* text-align: center; */
     font-family: 'Cormorant SC', serif;
     color: #407055;
     margin-left: 2vw;
@@ -186,16 +160,17 @@
     font-size: 1.25vw;
 }
 
+/* bottom of the home page */
 #logo-home{
     width: 15vh;
     display: block;
     margin-left: auto;
     margin-right: auto;
-    margin-top: 6vh
+    margin-top: 15vh
 }
 
 .tomato-hands-pic,
-.harvest-basket{
+.harvest-basket-pic{
     display: inline-block;
     opacity: 0;
     box-shadow:
@@ -204,11 +179,10 @@
     transform: translateY(4em) scale(.5);
     transition: transform 4s .25s cubic-bezier(0,1,.3,1),
                 opacity .3s .25s ease-out;
-    /* max-width: 600px;
-    width: 90%; */
     will-change: transform, opacity;
 }
 
+/* home page photo transitions */
 .tomato-trellis-pic{
     display: inline-block;
     opacity: 0;
@@ -218,41 +192,37 @@
     transform: translateX(22em);
     transition: transform 4s .25s cubic-bezier(0,1,.3,1),
                 opacity .3s .25s ease-out;
-    /* max-width: 600px;
-    width: 90%; */
     will-change: transform, opacity;
 }
 
-.chard{
+.chard-pic{
     display: inline-block;
     opacity: 0;
+    border-radius: 3vh;
     box-shadow:
     60px -60px 0 -40px #D3F2DF,
     -60px 60px 0 -40px #a1bdac;
     transform: translateX(0em);
     transition: transform 4s .25s cubic-bezier(0,1,.3,1),
                 opacity .3s .25s ease-out;
-    /* max-width: 600px;
-    width: 90%; */
     will-change: transform, opacity;
 }
 
-.potting-mix{
+.potting-mix-pic{
     display: inline-block;
     opacity: 0;
+    border-radius: 3vh;
     box-shadow:
     60px -60px 0 -40px #a1bdac,
     -60px 60px 0 -40px #D3F2DF;
     transform: translateY(0em);
     transition: transform 4s .25s cubic-bezier(0,1,.3,1),
                 opacity .3s .25s ease-out;
-    /* max-width: 600px;
-    width: 90%; */
     will-change: transform, opacity;
 }
 
 .animate-tomato-hands-pic,
-.animate-harvest-basket{
+.animate-harvest-basket-pic{
     opacity: 1;
     transform: translateY(0em) scale(1);
 }
@@ -262,51 +232,12 @@
     transform: translateX(0em);
 }
 
-.animate-chard{
+.animate-chard-pic{
     opacity: 1;
     transform: translateX(4em);
 }
 
-.animate-potting-mix{
+.animate-potting-mix-pic{
     opacity: 1;
     transform: translateY(4em);
 }
-
-.first-slogan {
-    /* transform: scale(.5);
-    transition: transform 4s .25s cubic-bezier(0,1,.3,1),
-    filter 10s 10s ease-out;
-    will-change: transform; */
-    transform: scale(.5);
-    transition: transform 2s .2s cubic-bezier(0,.5,.75,1), filter 10s 2s ease-out;
-    will-change: transform;
-  }
-  
-.animate-first-slogan {
-    transform: translate(0, 75%) scale(1.25);
-  }
-
-
-
-/* @keyframes animate-photo {
-    0% {
-        transform: scale(1);
-    }
-    25% {
-        transform: scale(1.1)
-    }
-    50% {
-        transform: scale(1.2)
-    }
-    75% {
-        transform: scale(1.1)
-    }
-    100% {
-        transform: scale(1)
-    }
-} */
-/* transform 4s .25s cubic-bezier(0, 1, .3, 1), */
-
-/* .inline-photo.is-visible{
-    opacity: 1;
-} */

@@ -25,8 +25,8 @@ function LogIn({handleUserLogin}) {
     <div id="login-page">
       <div id="login-padding">
         <div id="login-container">
-          <h1>Welcome back.</h1>
-          <small>Sign in to get growing.</small>
+          <h1>welcome back</h1>
+          <small>sign in to get growing</small>
           <br></br>
           <form id='login-form' onSubmit={handleLogin}>
             <div>
@@ -68,5 +68,3 @@ function LogIn({handleUserLogin}) {
 }
 
 export default LogIn
-
-// style={{backgroundColor: "white", padding:"5%", borderStyle:"solid", borderRadius:"1%"}}

@@ -1,6 +1,7 @@
 import React from 'react'
 
 function Errors({errors}) {
+    //this component is used by multiple other components that use forms to display any errors to the user
     const renderErrors = errors.map((error, i) => {
         return (
             <div key={i}>
@@ -9,11 +10,12 @@ function Errors({errors}) {
             </div>
         )
     })
-  return (
+
+    return (
     <div style={{color: "red"}}>
         {renderErrors}
     </div>
-  )
+    )
 }
 
 export default Errors

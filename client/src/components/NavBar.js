@@ -4,55 +4,42 @@ import './NavBar.css'
 import logo from '../images/logo.png'
 
 function NavBar({isLoggedIn, handleLogout}) {
+  
   function handleLogoutClick() {
     fetch("/api/logout", { method: "DELETE" }).then((r) => {
       if (r.ok) {
-        // setIsLoggedIn(false)
-        // setUser(null);
-        // history.push('/login')
         handleLogout(r)
       }
     });
   }
 
+  //initialize empty variable to later be assigned depending on if a user is logged in or not
   let links
 
   if (isLoggedIn) {        
-      links = 
-      <>
-        {/* <Link to='/logout' exact> */}
-          <Link class='link' id='logout-button' onClick={handleLogoutClick}>Logout</Link>
-        {/* </Link> */}
-      </>
+    links = 
+    <>
+      <Link class='link' id='logout-button' onClick={handleLogoutClick}>Logout</Link>
+    </>
   } else {
-      links = 
-      <>
-        <Link class='link' exact to='/login'>
-          Login
-        </Link>
-        {/* <Link class='link' exact to='/signup'>
-          Signup
-        </Link> */}
-      </>
+    links = 
+    <>
+      <Link class='link' exact to='/login'>Login</Link>
+    </>
   }
 
-
-    let gardenLinks = isLoggedIn ?
-    <>
-      <Link class='link' exact to='/create_garden'>
-        Create Garden
-      </Link>
-      <Link class='link' exact to='/my_gardens'>
-        My Gardens
-      </Link>
-    </>
-    :
-    null
-
-   
-
-  
-
+  //if a user is logged in the create garden and my gardens link on the nav bar will show
+  let gardenLinks = isLoggedIn ?
+  <>
+    <Link class='link' exact to='/create_garden'>
+      Create Garden
+    </Link>
+    <Link class='link' exact to='/my_gardens'>
+      My Gardens
+    </Link>
+  </>
+  :
+  null
 
   return (
     <div class='container circleBehind'>

@@ -1,6 +1,6 @@
 import React from 'react'
 import SelectCropDropdown from './SelectCropDropdown'
-import CreateGardenDropdown from './CreateGardenDropdown'
+import CreateGardenForm from './CreateGardenForm'
 import './Header.css'
 
 function Header({crops, handleSelectedCrop, selectedCrop, user, handleCurrentGarden, currentGarden}) {
@@ -12,7 +12,7 @@ function Header({crops, handleSelectedCrop, selectedCrop, user, handleCurrentGar
         <h1>Welcome, {user.first_name}</h1>
         <h1>Start designing your garden!</h1>
         <h2>First, choose a name for your garden and the dimensions of your plot (ft x ft)</h2>
-        <CreateGardenDropdown user={user} handleCurrentGarden={handleCurrentGarden}/>
+        <CreateGardenForm user={user} handleCurrentGarden={handleCurrentGarden}/>
       </div>
       :
       <div id="select-crop-dropdown">

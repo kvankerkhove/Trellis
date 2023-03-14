@@ -22,14 +22,12 @@
     opacity: .9;
     width: 30%;
     margin: auto;
-    /* padding: 5rem; */
     margin-top: 5rem;
 }
 
 #signup-container h1{
     font-size: 2vw;
     color: #407055;
-
 }
 
 #signup-container label{

@@ -42,7 +42,7 @@ escarole = Crop.create({
     watering_needs: 'Overhead water enough to keep soil moist, especially during the summer. Refrain from overhead watering a few days before harvest after rubber banding to avoid rot while blanching',
     details: 'Sow seeds 6 seeds per foot, rows 12-18" apart. Cover seed lightly, about 1/8", and firm soil gently. Dry soil must be watered to ensure coolness and moisture, and for uniform germination. Thin the seedlings 8" apart as soon as they are large enough to handle.',
     image: 'escarole.png',
-    url: "https://www.johnnyseeds.com/dw/image/v2/BBBW_PRD/on/demandware.static/-/Sites-jss-master/default/dw86eee4de/images/products/vegetables/02614_01_natacha.jpg?sw=1120"
+    url: "https://img.washingtonpost.com/rf/image_480w/2010-2019/WashingtonPost/2011/12/01/LocalLiving/Images/ho-damrosch8.jpg?uuid=QehSLBwrEeGWetf17tIF1w"
 })
 
 tomato = Crop.create({

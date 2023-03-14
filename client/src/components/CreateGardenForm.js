@@ -1,30 +1,30 @@
 import React, { useState } from 'react'
 import Errors from './Errors'
-import './CreateGardenDropdown.css'
+import './CreateGardenForm.css'
 
-function CreateGardenDropdown({user, handleCurrentGarden}) {
-    const [errors, setErrors] = useState([])
-    if(!user) return null
-    const user_id = +user.id
+function CreateGardenForm({user, handleCurrentGarden}) {
+  const [errors, setErrors] = useState([])
+  if(!user) return null
+  const user_id = +user.id
 
-  //creates new garden and sets session to garden's id on backend
-    const handleCreateGarden = async (e) => {
-        e.preventDefault()
-        let form = new FormData(document.querySelector("#create-garden-form"))
-        form.append('user_id', user_id);
-        let req = await fetch("/api/create_garden", {
-          method: "POST",
-          body: form,
-        })
+  //creates the user's new garden and sets session to garden's id on backend
+  const handleCreateGarden = async (e) => {
+    e.preventDefault()
+    let form = new FormData(document.querySelector("#create-garden-form"))
+    form.append('user_id', user_id);
+    let req = await fetch("/api/create_garden", {
+      method: "POST",
+      body: form,
+    })
 
-        if(req.ok){
-            let garden = await req.json()
-            handleCurrentGarden(garden)
-        } else {
-            let err = await req.json()
-            setErrors(err.errors)
-        }
+    if(req.ok){
+        let garden = await req.json()
+        handleCurrentGarden(garden)
+    } else {
+        let err = await req.json()
+        setErrors(err.errors)
     }
+  }
 
 
   return (
@@ -50,4 +50,4 @@ function CreateGardenDropdown({user, handleCurrentGarden}) {
   )
 }
 
-export default CreateGardenDropdown
+export default CreateGardenForm
