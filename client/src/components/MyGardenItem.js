@@ -8,13 +8,13 @@ import { TiDeleteOutline } from 'react-icons/ti'
 function MyGardenItem({garden, setCurrentGarden, handleDelete}) {
   const [height, setHeight] = useState('')
   const [width, setWidth] = useState('')
-  const {id, name, rows, columns, garden_squares} = garden
+  const {name, rows, columns} = garden
 
   const history = useHistory()
+
+  //the height and width of each square on the grid will be different depending on the size of the garden grid in order to fit in the tiles
   useEffect (() => {
     if(columns <= 5 && rows <= 5){
-      // setHeight('52px')
-      // setWidth('52px')
       setHeight('50vh')
       setWidth('50vh')
     } else if (columns <= 7 && rows <= 7){

@@ -1,23 +1,16 @@
 #garden-grid-container{
     display: flex;
     justify-content: center;
-
 }
 
 #garden-grid{
-    /* width: 750px;
-    height: 750px; */
-    /* display: grid; */
     justify-items: center;
     align-items: center;
     justify-content: center;
-    /* grid-template-columns: repeat(10, 1fr);
-    grid-template-rows: repeat(10, 1fr); */
     column-gap: 0px;
     row-gap: 0px;
     background-image: url("https://media.istockphoto.com/photos/earth-texture-macro-photography-pattern-background-picture-id1277752567?k=20&m=1277752567&s=612x612&w=0&h=fHnOc6HznYZreHs5baH5e2448U-Eua6to66qoHf05Ds=");
     object-fit: cover;
     margin-bottom: 2rem;
     box-shadow: 0px 5px 10px 0px black; 
-
 }

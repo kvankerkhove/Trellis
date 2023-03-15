@@ -1,42 +1,36 @@
-
-/* @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300&family=Cormorant+SC:wght@300&display=swap'); */
 @import url('https://fonts.googleapis.com/css2?family=BIZ+UDGothic&family=Cormorant+Garamond:wght@300&family=Cormorant+SC&display=swap');
-
-/* #garden-item{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    background-color: bisque;
-    width: 50%;
-} */
 
 .tile{
     position: relative;
     display: inline-block;
-    margin-right: 10px;
     font-size: 10px;
     cursor: pointer;
     transition: 450ms all;
     transform-origin: center left;
 }
 
+.tile:first-of-type {
+    margin-left: 5vw
+}
+
+.tile:last-of-type {
+    margin-right: 5vw;
+}
+
 .tile-card{
     display: flex;
     flex-direction: column;
-    height: 50vh;
+    height: 55vh;
     width: 25vw;
-    /* background-color: #efdecd; */
     background-image: linear-gradient(to bottom right, #D3F2DF, white, #D3F2DF);
-    /* background-size: cover; */
     box-shadow: 0px 5px 10px 0px #D3F2DF; 
     text-align: center;
     justify-content: space-between;
-    /* border-radius: 10px; */
     color: black;
     font-family: 'Cormorant SC', serif;
     margin-left: 1rem;
     margin-right: 1rem;
+    margin-bottom: 1rem;
 }
 .grid{
     background-color: brown;
@@ -50,20 +44,6 @@
 #name{
     font-size: 40px;
 }
-/* .button{
-    width: 25%;
-    text-align: center;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.delete-btn{
-    width: 25%;
-    text-align: center;
-    margin-left: auto;
-    margin-right: auto;
-} */
-
 
 .tile__title {
 position: absolute;

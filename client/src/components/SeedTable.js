@@ -2,11 +2,12 @@ import React from 'react'
 import './SeedTable.css'
 
 function SeedTable({currentGardenSquares}) {
+
+    //organizes all of the garden squares in order to find the total number of seeds needed for the current garden grid
     let hashMap = {}
     currentGardenSquares.forEach((square) => {
         if(Object.keys(hashMap).includes(square.id.toString())){
             hashMap[square.id] = hashMap[square.id] + +square.plants_per_sq_ft
-
         } else {
             hashMap[square.id] = +square.plants_per_sq_ft
         }
@@ -16,6 +17,7 @@ function SeedTable({currentGardenSquares}) {
     let values = Object.values(hashMap) 
     let updated_values = values.map(value => Math.ceil(value * 1.33))
 
+    //organizes all of the garden squares in order to find the total projected yield of each crop in the garden grid
     let yieldMap = {}
     currentGardenSquares.forEach((square) => {
         if(Object.keys(yieldMap).includes(square.id.toString())){
@@ -26,7 +28,6 @@ function SeedTable({currentGardenSquares}) {
         }
     })
 
-
     let crops = Object.keys(yieldMap)
     let yields = Object.values(yieldMap) 
 
@@ -35,7 +36,6 @@ function SeedTable({currentGardenSquares}) {
     })
 
     const renderNeededSeeds = keys.map(key => {
-        // let changeToNum = +key
         let plant = currentGardenSquares.find(square => square.id === +key)
         let totalNumOfPlants = currentGardenSquares.filter(square => square.id === +key).length
         

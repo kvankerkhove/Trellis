@@ -1,8 +1,7 @@
-import React, { useState } from 'react'
+import React from 'react'
 import './SelectCropDropdown.css'
 
 function SelectCropDropdown({crops, handleSelectedCrop, selectedCrop}) {
-    // const [cropIsChosen, setCropIsChosen] = useState(false)
     if (!crops) return null
 
     const allCropsExceptFallow = crops.filter(crop => crop.name !== "Fallow")
@@ -15,11 +14,6 @@ function SelectCropDropdown({crops, handleSelectedCrop, selectedCrop}) {
 
     const handleOnChange = (e) => {
         const chosenCrop = crops.find(crop => crop.name === e.target.value)
-        // if(e.target.value !== 'Select Crop'){
-        //     setCropIsChosen(true)
-        // } else {
-        //     setCropIsChosen(false)
-        // }
         handleSelectedCrop(chosenCrop)
     }
 
@@ -37,16 +31,5 @@ function SelectCropDropdown({crops, handleSelectedCrop, selectedCrop}) {
     </div>
   )
 }
-
-{/* <div class="dropdown">
-  <button class="dropbtn">Dropdown</button>
-  <div class="dropdown-content">
-  <a href="#">Link 1</a>
-  <a href="#">Link 2</a>
-  <a href="#">Link 3</a>
-  </div>
-</div> */}
-
-
 
 export default SelectCropDropdown

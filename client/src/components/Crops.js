@@ -24,12 +24,14 @@ function Crops() {
     }
   })
 
-  //renders a section on the crop page for each plant family
+  //renders a tab on the crop page nav bar for each plant family with a href to direct user to respective section when clicked
   const renderTabs = plantFamilies.map(family => {
+    console.log(family)
     let href = `#${family.toLowerCase()}`
     return <li key={plantFamilies.indexOf(family)}><a class="tab" href={href}>{family}</a></li>
   })
 
+  //renders a div for each plant family on the crops page 
   const renderPages = plantFamilies.map(family => {
     let id = `${family.toLowerCase()}`
     //filters all the crops that are in a specific family
@@ -77,7 +79,7 @@ function Crops() {
     )
   })
 
-  // troubleshooting intersection observer on scroll tab animations
+  // troubleshooting intersection observer on-scroll tab animations
 
   // const tabs = document.querySelectorAll(".tab")
   // const pages = document.querySelectorAll(".page")

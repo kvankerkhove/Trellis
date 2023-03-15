@@ -3,13 +3,12 @@ import './GardenTile.css'
 
 function GardenTile({id, selectedCrop, handleGardenSquare, square, height, width}) {
 
-
   const handleClick = (e) => {
     e.target.src = require(`../images/${selectedCrop.image}`)
-    // e.target.style.opacity = 1
     handleGardenSquare(square.id, selectedCrop)
   }
 
+  //troubleshooting new right click feature
   const handleRightClick = (e) => {
     console.log(e.target)
     console.log(square)
@@ -24,6 +23,3 @@ function GardenTile({id, selectedCrop, handleGardenSquare, square, height, width
 
 export default GardenTile
 
-// height={height} width={width}
-
-// src={ require(`../images/${crop.image}`)}

@@ -6,7 +6,6 @@ function Schedule({currentGarden, refresh}) {
   const [cropSquares, setCropSquares] = useState([])
   const [scheduleUpdate, setScheduleUpdate] = useState(true)
 
-  
   useEffect(() => {
     fetch(`/api/all_squares/${currentGarden.id}`)
     .then(r => r.json())
@@ -17,6 +16,7 @@ function Schedule({currentGarden, refresh}) {
   }, [refresh, scheduleUpdate])
 
   let cropMap = {}
+
   //creates crop map with name of crop and number of times that crop appears in squares, stores in cropMap
   cropSquares.forEach((square) => {
     if(Object.keys(cropMap).includes(square.crop.name)){
@@ -31,11 +31,9 @@ function Schedule({currentGarden, refresh}) {
   const crops = Object.keys(cropMap)
   const numberOfCrops = Object.values(cropMap)
 
-  //function that renders each row of the schedule table
- 
+  //function that renders each row of the schedule table, each row contains one crop with the date planted, days to maturity, and projected harvest date
   const renderCrops = crops.map(crop => {
     const date = cropSquares.find(square => square.crop.name === crop).start_date.slice(0, 10)
-
     const dtm = cropSquares.find(square => square.crop.name === crop).crop.days_to_maturity
 
     const harvestDate = (dtm, date) => {
@@ -44,12 +42,7 @@ function Schedule({currentGarden, refresh}) {
 
     let harvest = harvestDate(dtm, date)
 
-    // Deprecation warning: moment().add(period, number) is deprecated. Please use moment().add(number, period).
-
     const cropSquareId = cropSquares.find(square => square.crop.name === crop).id
-
-    
-  
 
     const handleOnChange = (e) => {
       fetch(`/api/garden_squares/${cropSquareId}`, {
@@ -75,10 +68,6 @@ function Schedule({currentGarden, refresh}) {
       </tr>
     )
   })
-
-  
-
-
 
   return (
     <div id='seed-table-container'>

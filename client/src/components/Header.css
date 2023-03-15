@@ -1,7 +1,5 @@
-/* #dropdown{
-    height: 33vh;
-} */
 @import url('https://fonts.googleapis.com/css2?family=BIZ+UDGothic&family=Cormorant+Garamond:wght@300&family=Cormorant+SC&display=swap');
+
 #create-garden-dropdown{
     display: flex;
     height: 40vh;

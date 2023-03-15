@@ -9,12 +9,13 @@ function GardenData({currentGarden}) {
   const [currentGardenSquares, setCurrentGardenSquares] = useState([])
   const [refresh, setRefresh] = useState(true)
 
-  
+  //updates the garden data (seed table and schedule) everytime the garden changes or the refresh button is clicked
   useEffect(() => {
     fetch(`/api/garden_data/${currentGarden.id}`)
     .then(r => r.json())
     .then(data => setCurrentGardenSquares(data))
   },[currentGarden, refresh])
+
   return (
     <div id="garden-data">
       <div id="refresh">

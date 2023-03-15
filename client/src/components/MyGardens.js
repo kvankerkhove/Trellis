@@ -4,15 +4,8 @@ import './MyGardens.css'
 
 function MyGardens({user, setCurrentGarden}) {
   const [myGardens, setMyGardens] = useState([])
-  // const [gardenUser, setGardenUser] = useState(null)
-  // const [updatedGardens, setUpdatedGardens] = useState(myGardens)
-
-  // useEffect(() => {
-  //   fetch('/current_user')
-  //   .then(r => r.json())
-  //   .then(user => setGardenUser(user))
   
-  
+  //fetch request to retrieve all of a users gardens, only reruns the effect if user changes
   useEffect(() => {
     if (user) {
       fetch(`/api/all_gardens/${user.id}`)
@@ -21,25 +14,16 @@ function MyGardens({user, setCurrentGarden}) {
     }
   }, [user])
 
-
-  // console.log(`garden user: ${gardenUser}`)
-
-  // const userId = user.id
-
-  
-
+  //deletes a garden from a users gardens
   const handleDelete = (deletedGarden) => {
     const remainingGardens = myGardens.filter(garden => garden.id !== deletedGarden.id)
     setMyGardens(remainingGardens)
     setCurrentGarden(null)
   }
 
-
   const renderGardens = myGardens.map(garden => {
     return <MyGardenItem key={garden.id} garden={garden} setCurrentGarden={setCurrentGarden} handleDelete={handleDelete}/>
   })
-
-
 
   return (
     <div className="contain">
@@ -54,5 +38,3 @@ function MyGardens({user, setCurrentGarden}) {
 }
 
 export default MyGardens
-
-{/* <div id="my-gardens-page"> */}
